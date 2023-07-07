@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr max-content;
+
+
+    &>header {}
+
+    &>main {
+        @include text();
+    }
+
+    &>footer {}
+}
+
+.text-h1 {
+    @include text-h1();
+
+    @media (width <=$bp-tablet) {
+        @include mobile-text-h1();
+    }
+}
+
+.text-h2 {
+    @include text-h2();
+
+    @media (width <=$bp-tablet) {
+        @include mobile-text-h2();
+    }
+}
+
+.text-h3 {
+    @include text-h3();
+
+    @media (width <=$bp-tablet) {
+        @include mobile-text-h3();
+    }
+}
+
+.text,
+p {
+    @include text();
+
+    @media (width <=$bp-tablet) {
+        @include mobile-text();
+    }
+}
+
+.text-button {
+    @include text-button();
+}
+
+.small-text {
+    @include small-text();
+
+    @media (width <=$bp-tablet) {
+        @include mobile-small-text();
+    }
+}
+
+
+.text-overflow {
+    --line-clamp: 3;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: var(--line-clamp);
+    -webkit-line-clamp: var(--line-clamp);
+    line-clamp: var(--line-clamp);
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+[class*="__container"] {
+    container: section-container / inline-size;
+    max-width: var(--max-container-width);
+    box-sizing: content-box;
+    margin: 0 auto;
+    padding-inline: var(--container-padding);
+}
+
+
+html:is(.touch) {}
+
+@import "../sections/sections.scss";

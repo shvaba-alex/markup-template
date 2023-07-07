@@ -1,0 +1,13 @@
+@import "./portfolio-section.scss";
+@import "./about-section.scss";
+@import "./hero-section.scss";
+
+.page {
+    &>section:not(:first-child) {
+        margin-top: var(--s-14);
+
+        @media (max-width: $bp-medium-mobile) {
+            margin-top: var(--s-10);
+        }
+    }
+}

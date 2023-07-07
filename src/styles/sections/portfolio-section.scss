@@ -1,0 +1,29 @@
+.portfolio-section {
+    &__portfolios {
+        margin-top: var(--s-5);
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--s-4);
+    }
+
+    @media (max-width: $bp-laptop) {
+        &__portfolios {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: $bp-large-mobile) {
+        &__portfolios {
+            gap: var(--s-2);
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: $bp-small-mobile) {
+        &__portfolios {
+            gap: var(--s-4);
+            grid-template-columns: 1fr;
+        }
+    }
+}

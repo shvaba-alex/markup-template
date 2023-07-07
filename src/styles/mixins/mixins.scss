@@ -1,0 +1,94 @@
+@mixin defineVariable($name, $value) {
+	--#{$name}: #{$value}
+}
+
+@mixin defineMarkupSpaces($margin) {
+	@for $i from 1 through 35 {
+		@include defineVariable("s-#{$i}", rem($margin * $i));
+	}
+}
+
+@function percent($px, $from) {
+    $result: math.div($px, $from) * 100%;
+    @return $result;
+}
+
+@function rem($px) {
+    $result: math.div($px, 16)+rem;
+    @return $result;
+}
+
+@function em($px, $current: 16) {
+    $result: math.div($px, $current)+em;
+    @return $result;
+}
+
+@mixin text-h1() {
+	font-size: rem(76);
+	font-weight: 700;
+	line-height: math.div(104, 76);
+}
+
+@mixin mobile-text-h1() {
+	font-size: rem(40);
+	font-weight: 600;
+	line-height: math.div(55, 40);
+}
+
+@mixin text-h2() {
+	font-size: rem(40);
+	font-weight: 600;
+	line-height: math.div(55, 40);
+}
+
+@mixin mobile-text-h2() {
+	font-size: rem(32);
+	font-weight: 500;
+	line-height: math.div(44, 32);
+}
+
+@mixin text-h3() {
+	font-size: rem(32);
+	font-weight: 500;
+	line-height: math.div(44, 32);
+}
+
+@mixin mobile-text-h3() {
+	font-size: rem(20);
+	font-weight: 500;
+	line-height: math.div(27, 20);
+}
+
+@mixin text() {
+	font-size: rem(18);
+	font-weight: 500;
+	line-height: math.div(25, 18);
+}
+
+@mixin mobile-text() {
+	font-size: rem(16);
+	font-weight: 500;
+	line-height: math.div(22, 16);
+}
+
+@mixin small-text() {
+	font-size: rem(14);
+	line-height: math.div(19, 14);
+}
+
+@mixin mobile-small-text() {
+	font-size: rem(12);
+	line-height: math.div(16, 12);
+}
+
+@mixin small-text-2() {
+	font-size: rem(7);
+	line-height: math.div(10, 7);
+}
+
+@mixin text-button() {
+	font-size: rem(12);
+	line-height: math.div(16, 12);
+	text-transform: uppercase;
+	font-weight: 700;
+}

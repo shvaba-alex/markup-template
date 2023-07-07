@@ -1,0 +1,21 @@
+.section-header {
+    padding-block-end: var(--s-2);
+
+    border-bottom: var(--border);
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__description {
+        margin-top: var(--s-2);
+
+        max-width: var(--col-w-6);
+    }
+
+    @media (max-width: $bp-laptop) {
+        &__description {
+            max-width: 100%;
+        }
+    }
+}

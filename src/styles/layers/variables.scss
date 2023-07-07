@@ -1,0 +1,57 @@
+:root {
+
+    // Theme сolors
+    --clr-black: #111;
+    --clr-darkblue: #0B4396;
+    --clr-gray-100: #525A5D;
+    --clr-gray-700: #999;
+    --clr-gray-800: #A9A9A9;
+    --clr-blue: #97C7EB;
+    --clr-white: #FFF;
+    --clr-pink: #FFCDD6;
+
+    // UI colors
+    --clr-primary-button: var(--clr-black);
+    --clr-border: var(--clr-gray-800);
+    --clr-text: var(--clr-black);
+
+    // UI spaces
+    @include defineMarkupSpaces(8);
+
+    // z-index
+    --zi-negative-3: -3;
+    --zi-negative-2: -2;
+    --zi-negative-1: -1;
+    --zi-1: 1;
+    --zi-2: 2;
+    --zi-3: 3;
+    --zi-header: 4;
+    --zi-sidebar: 5;
+    --zi-overlay: 6;
+    --zi-popup: 7;
+    --zi-all-cover: 8;
+
+    // container
+    --max-container-width: 90rem; // 1440px;
+    --container-padding: 1rem;
+    --general-container-padding: calc(var(--container-padding) * 2);
+
+    // container columns
+    --grid-gutter: var(--s-5);
+    --grid-columns: 12;
+    --grid-column-width: calc((100cqw - var(--grid-gutter) * (var(--grid-columns) - 1)) / var(--grid-columns));
+    --col-w-1: var(--grid-column-width);
+    --col-w-2: calc(var(--col-w-1) * 2 + var(--grid-gutter));
+    --col-w-3: calc(var(--col-w-1) * 3 + var(--grid-gutter) * 2);
+    --col-w-4: calc(var(--col-w-1) * 4 + var(--grid-gutter) * 3);
+    --col-w-5: calc(var(--col-w-1) * 5 + var(--grid-gutter) * 4);
+    --col-w-6: calc(var(--col-w-1) * 6 + var(--grid-gutter) * 5);
+    --col-w-7: calc(var(--col-w-1) * 7 + var(--grid-gutter) * 6);
+    --col-w-8: calc(var(--col-w-1) * 8 + var(--grid-gutter) * 7);
+    --col-w-9: calc(var(--col-w-1) * 9 + var(--grid-gutter) * 8);
+    --col-w-10: calc(var(--col-w-1) * 10 + var(--grid-gutter) * 9);
+    --col-w-11: calc(var(--col-w-1) * 11 + var(--grid-gutter) * 10);
+    --col-w-12: calc(var(--col-w-1) * 12 + var(--grid-gutter) * 11);
+
+    --border: 1px solid var(--clr-border);
+}

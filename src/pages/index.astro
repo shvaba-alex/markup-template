@@ -1,0 +1,138 @@
+---
+import "../styles/style.scss";
+import Layout from "../layouts/Layout.astro";
+import PortfolioCard from "../components/PortfolioCard.astro";
+import Accordion from "../components/Accordion.astro";
+
+import volmkImg from "../images/volmk.webp";
+import grodnomkImg from "../images/grodnomk.webp";
+import mppImg from "../images/mpp.webp";
+import crmImg from "../images/crm.webp";
+import meImg from "../images/me.jpg";
+---
+
+<Layout title="Welcome to my Template.">
+	<main class="page">
+		<section
+		id="intro-section"
+			class="page__hero-section hero-section"
+			aria-labelledby="hero-section-label"
+		>
+			<div class="hero-section__container">
+				<div class="hero-section__avatar">
+					<img src={meImg} alt="Shvaba Alexander" />
+				</div>
+				<div class="hero-section__conten">
+					<h1
+						class="hero-section__title text-h1"
+						id="hero-section-label"
+					>
+						Shvaba Alexander
+					</h1>
+					<p class="hero-section__description">
+						I'm frontend developer
+					</p>
+				</div>
+			</div>
+		</section>
+		<section
+			id="about-section"
+			class="page__about-section about-section"
+			aria-labelledby="about-section-title"
+		>
+			<div class="about-section__container">
+				<header class="about-section__header section-header">
+					<h2
+						class="about-section__title section-header__title text-h2"
+						id="about-section-title"
+					>
+						About me
+					</h2>
+					<p
+						class="about-section__description section-header__description"
+					>
+						I’m Frontend Developer in "<a
+							href="https://spektr.digital"
+							target="_blank">spektr.digital</a
+						>". I've been developing a CRM system for managing real
+						estate documents using Vue,js, Laravel, WebSocket,
+						Centrifugo and Docker, supporting WordPress projects and
+						adding new functionality. I've experience about doing
+						markup using Gulp and Webpack.
+					</p>
+				</header>
+				<div class="about-section__skills">
+					<h3 class="text-h3">Skills:</h3>
+					<ul class="about-section__skills-list skills-list">
+						<li class="skills-list__skill">JS</li>
+						<li class="skills-list__skill">Vue.js 3</li>
+						<li class="skills-list__skill">Astro</li>
+						<li class="skills-list__skill">GSAP</li>
+						<li class="skills-list__skill">Gulp</li>
+						<li class="skills-list__skill">Webpack</li>
+						<li class="skills-list__skill">SCSS</li>
+						<li class="skills-list__skill">CSS</li>
+						<li class="skills-list__skill">HTML</li>
+						<li class="skills-list__skill">Git</li>
+						<li class="skills-list__skill">Accessibility markup</li>
+						<li class="skills-list__skill">php</li>
+						<li class="skills-list__skill">Wordpress</li>
+						<li class="skills-list__skill">Python</li>
+						<li class="skills-list__skill">Django</li>
+						<li class="skills-list__skill">AutoLisp</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section
+			id="portfolio-section"
+			class="page__portfolio-section portfolio-section"
+			aria-labelledby="portfolio-section-title"
+		>
+			<div class="portfolio-section__container">
+				<header class="portfolio-section__header section-header">
+					<h2
+						class="portfolio-section__title section-header__title text-h2"
+						id="portfolio-section-title"
+					>
+						Portfolio
+					</h2>
+				</header>
+				<div class="portfolio-section__portfolios">
+					<PortfolioCard
+						href="#"
+						image={crmImg}
+						tags={[
+							"js",
+							"vue.js 3",
+							"php",
+							"laravel",
+							"websocket",
+							"centrifuga",
+							"REST API",
+						]}
+						title="CRM (NDA)"
+					/>
+					<PortfolioCard
+						href="https://volmk.by/"
+						image={volmkImg}
+						tags={["scss", "js", "gulp", "bitrix"]}
+						title="Volkovysk meat-processing plant"
+					/>
+					<PortfolioCard
+						href="https://grodnomk.by"
+						image={grodnomkImg}
+						tags={["scss", "js", "gulp", "bitrix"]}
+						title="Grodnomk"
+					/>
+					<PortfolioCard
+						href="https://mpp.by"
+						image={mppImg}
+						tags={["scss", "js", "gulp", "wordpress"]}
+						title="MASTERPRINT-PACK"
+					/>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
