@@ -100,7 +100,4 @@ p {
     padding-inline: var(--container-padding);
 }
 
-
-html:is(.touch) {}
-
 @import "../sections/sections.scss";

@@ -34,6 +34,7 @@
     // container
     --max-container-width: 90rem; // 1440px;
     --container-padding: 1rem;
+    --container-padding-negative: -1rem;
     --general-container-padding: calc(var(--container-padding) * 2);
 
     // container columns
@@ -52,6 +53,19 @@
     --col-w-10: calc(var(--col-w-1) * 10 + var(--grid-gutter) * 9);
     --col-w-11: calc(var(--col-w-1) * 11 + var(--grid-gutter) * 10);
     --col-w-12: calc(var(--col-w-1) * 12 + var(--grid-gutter) * 11);
+
+    // column width with grid-gutter
+    --col-w-g-1: calc(var(--grid-column-width) + var(--grid-gutter));
+    --col-w-g-2: calc(var(--col-w-1) * 2 + var(--grid-gutter) * 2);
+    --col-w-g-3: calc(var(--col-w-1) * 3 + var(--grid-gutter) * 3);
+    --col-w-g-4: calc(var(--col-w-1) * 4 + var(--grid-gutter) * 4);
+    --col-w-g-5: calc(var(--col-w-1) * 5 + var(--grid-gutter) * 5);
+    --col-w-g-6: calc(var(--col-w-1) * 6 + var(--grid-gutter) * 6);
+    --col-w-g-7: calc(var(--col-w-1) * 7 + var(--grid-gutter) * 7);
+    --col-w-g-8: calc(var(--col-w-1) * 8 + var(--grid-gutter) * 8);
+    --col-w-g-9: calc(var(--col-w-1) * 9 + var(--grid-gutter) * 9);
+    --col-w-g-10: calc(var(--col-w-1) * 10 + var(--grid-gutter) * 10);
+    --col-w-g-11: calc(var(--col-w-1) * 11 + var(--grid-gutter) * 11);
 
     --border: 1px solid var(--clr-border);
 }
