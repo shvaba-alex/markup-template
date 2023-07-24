@@ -1,12 +1,12 @@
-@import "./portfolio-section.scss";
-@import "./about-section.scss";
-@import "./hero-section.scss";
+@import "./portfolio-section";
+@import "./about-section";
+@import "./hero-section";
 
 .page {
-    &>section:not(:first-child) {
+    & > section + section {
         margin-top: var(--s-14);
 
-        @media (max-width: $bp-medium-mobile) {
+        @media (max-width: $bp-mobile-medium) {
             margin-top: var(--s-10);
         }
     }

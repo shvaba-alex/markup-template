@@ -1,13 +1,14 @@
 .skills-list {
     display: flex;
-    gap: var(--s-2);
     flex-wrap: wrap;
+    gap: var(--s-2);
 
     &__skill {
-        border-radius: var(--s-3);
+
+        @include small-text;
+
         padding: var(--s-1) var(--s-2);
         border: var(--border);
-
-        @include small-text();
+        border-radius: var(--s-3);
     }
 }

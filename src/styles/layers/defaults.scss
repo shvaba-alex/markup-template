@@ -1,103 +1,111 @@
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    @include text;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: max-content 1fr max-content;
 
+    min-width: var(--min-container-width);
+
+    font-family: Inter, sans-serif;
 
     &>header {}
 
-    &>main {
-        @include text();
-    }
+    &>main {}
 
     &>footer {}
 }
 
 .text-h1 {
-    @include text-h1();
+    @include text-h1;
 
     @media (width <=$bp-tablet) {
-        @include mobile-text-h1();
+        @include mobile-text-h1;
     }
 }
 
 .text-h2 {
-    @include text-h2();
+    @include text-h2;
 
     @media (width <=$bp-tablet) {
-        @include mobile-text-h2();
+        @include mobile-text-h2;
     }
 }
 
 .text-h3 {
-    @include text-h3();
+    @include text-h3;
 
     @media (width <=$bp-tablet) {
-        @include mobile-text-h3();
+        @include mobile-text-h3;
     }
 }
 
 .text,
 p {
-    @include text();
+    @include text;
 
     @media (width <=$bp-tablet) {
-        @include mobile-text();
+        @include mobile-text;
     }
 }
 
 .text-button {
-    @include text-button();
+    @include text-button;
 }
 
 .small-text {
-    @include small-text();
+    @include small-text;
 
     @media (width <=$bp-tablet) {
-        @include mobile-small-text();
+        @include mobile-small-text;
     }
 }
 
 
 .text-overflow {
     --line-clamp: 3;
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+
     overflow: hidden;
+    display: -webkit-box;
+    display: box;
+
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
     -ms-line-clamp: var(--line-clamp);
     -webkit-line-clamp: var(--line-clamp);
     line-clamp: var(--line-clamp);
-    display: -webkit-box;
-    display: box;
-    word-wrap: break-word;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
 }
 
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
     position: absolute;
-    white-space: nowrap;
+
+    overflow: hidden;
+
     width: 1px;
+    height: 1px;
+
+    white-space: nowrap;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
 }
 
 [class*="__container"] {
     container: section-container / inline-size;
-    max-width: var(--max-container-width);
+
     box-sizing: content-box;
+    max-width: var(--max-container-width);
     margin: 0 auto;
     padding-inline: var(--container-padding);
 }
 
-@import "../sections/sections.scss";
+@import "../sections/sections";

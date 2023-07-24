@@ -1,6 +1,5 @@
 .section-header {
     padding-block-end: var(--s-2);
-
     border-bottom: var(--border);
 
     &__title {
@@ -8,9 +7,8 @@
     }
 
     &__description {
-        margin-top: var(--s-2);
-
         max-width: var(--col-w-6);
+        margin-top: var(--s-2);
     }
 
     @media (max-width: $bp-laptop) {

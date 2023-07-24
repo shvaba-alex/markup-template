@@ -1,5 +1,6 @@
 @use "sass:math";
-@import "mixins/mixins.scss";
+
+@import "mixins/mixins";
 
 @layer normolize,
 variables,
@@ -10,30 +11,27 @@ utilities,
 overrides;
 
 // SCSS varibles
-$bp-small-mobile: 30em; // 480px;
-$bp-medium-mobile: 40em; // 640px;
-$bp-large-mobile: 48em; // 758px;
+$bp-mobile-small: 30em; // 480px;
+$bp-mobile-medium: 40em; // 640px;
+$bp-mobile-large: 48em; // 758px;
 $bp-tablet: 62em; // 992px;
 $bp-laptop: 64em; // 1024px;
 $bp-pc: 80em; // 1280px;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
+@import 'https://fonts.googleapis.com/css2?family=Inter&display=swap';
 
 @layer normolize {
-    @import "layers/normolize.scss";
+    @import "layers/normolize";
 }
 
 @layer variables {
-    @import "layers/variables.scss";
+    @import "layers/variables";
 }
-
 
 @layer defaults {
-    @import "layers/defaults.scss";
+    @import "layers/defaults";
 }
 
-
 @layer components {
-    @import "layers/components.scss";
+    @import "layers/components";
 }
