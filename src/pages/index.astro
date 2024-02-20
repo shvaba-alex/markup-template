@@ -1,118 +1,62 @@
 ---
-import "../styles/style.scss";
-import Layout from "../layouts/Layout.astro";
-import PortfolioCard from "../components/PortfolioCard.astro";
-
-import volmkImg from "../images/volmk.webp";
-import grodnomkImg from "../images/grodnomk.webp";
-import mppImg from "../images/mpp.webp";
-import crmImg from "../images/crm.webp";
-import meImg from "../images/me.jpg";
-import shopnemanImg from "../images/shopneman.webp";
+import Icon from '@/components/Icon.astro'
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title="Welcome to my Template.">
-    <main class="page">
-        <section
-                id="intro-section"
-                class="page__hero-section hero-section"
-                aria-labelledby="hero-section-label">
-            <div class="hero-section__container">
-                <div class="hero-section__avatar">
-                    <img src={meImg} alt="Shvaba Alexander"/>
-                </div>
-                <div class="hero-section__conten">
-                    <h1
-                            class="hero-section__title text-h1"
-                            id="hero-section-label">
-                        Shvaba Alexander
-                    </h1>
-                    <p class="hero-section__description">
-                        I'm frontend developer
-                    </p>
-                </div>
+  <div class="page__container">
+    <aside class="page__sidebar page-sidebar">
+      <nav class="page-sidebar__nav" aria-label="Primary navigation">
+        <details class="page-sidebar__list spoiler">
+          <summary class="spoiler__header">
+            Css
+            <Icon icon="arrow" />
+          </summary>
+          <div class="spoiler__content">
+            <ul class="sidebar-list">
+              <li class="sidebar-list__link-wrapper">
+                <a href="/styles-articlest" class="sidebar-list__link">Styles</a>
+              </li>
+            </ul>
+          </div>
+        </details>
+      </nav>
+    </aside>
+    <main class="page__main-content">
+      <article class="main-content__article main-content" id="styles-article">
+        <header class="main-content__header">
+          <h1 class="main-content__title text-h1">test</h1>
+        </header>
+        <div class="main-content__sections-wrapper">
+          <section class="main-content__section section">
+            <div class="section__header section-header text-h2">
+              <h2 class="section-header__title">
+                <a class="section-header__anchor-link" href="#">Layouts</a>
+              </h2>
             </div>
-        </section>
-        <section
-                id="about-section"
-                class="page__about-section about-section"
-                aria-labelledby="about-section-title">
-            <div class="about-section__container">
-                <header class="about-section__header section-header">
-                    <h2 class="about-section__title section-header__title text-h2" id="about-section-title">
-                        About me
-                    </h2>
-                    <p class="about-section__description section-header__description">
-                        I’m Frontend Developer in "<a href="https://spektr.digital" target="_blank">spektr.digital</a>".
-                        I've been developing a CRM system for managing real
-                        estate documents using Vue,js, Laravel, WebSocket,
-                        Centrifugo and Docker, supporting WordPress projects and
-                        adding new functionality. I've experience about doing
-                        markup using Astro and Gulp.
-                    </p>
-                </header>
-                <div class="about-section__skills">
-                    <h3 class="text-h3">Skills:</h3>
-                    <ul class="about-section__skills-list skills-list">
-                        <li class="skills-list__skill">JS</li>
-                        <li class="skills-list__skill">Astro</li>
-                        <li class="skills-list__skill">Vue.js 3</li>
-                        <li class="skills-list__skill">SCSS</li>
-                        <li class="skills-list__skill">CSS</li>
-                        <li class="skills-list__skill">HTML</li>
-                        <li class="skills-list__skill">Git</li>
-                        <li class="skills-list__skill">Accessibility markup</li>
-                        <li class="skills-list__skill">Wordpress</li>
-                    </ul>
-                </div>
+            <div class="section__content content">
+              <h3>some text</h3>
+              <p>
+                some Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis voluptates
+                tenetur explicabo ab dolores officiis sint facere? Doloremque quisquam illo dicta
+                perferendis voluptas, non molestias omnis optio ducimus suscipit corporis. Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nemo neque debitis
+                repudiandae animi non explicabo veniam voluptate sunt, optio numquam ipsa!
+              </p>
             </div>
-        </section>
-        <section
-                id="portfolio-section"
-                class="page__portfolio-section portfolio-section"
-                aria-labelledby="portfolio-section-title">
-            <div class="portfolio-section__container">
-                <header class="portfolio-section__header section-header">
-                    <h2 class="portfolio-section__title section-header__title text-h2" id="portfolio-section-title">
-                        Portfolio
-                    </h2>
-                </header>
-                <div class="portfolio-section__portfolios">
-                    <PortfolioCard
-                            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-                            image={crmImg}
-                            tags={[
-                                "js",
-                                "vue.js 3",
-                                "php",
-                                "laravel",
-                                "websocket",
-                                "centrifugo",
-                                "REST API",
-                            ]}
-                            title="CRM (NDA)"/>
-                    <PortfolioCard
-                            href="https://volmk.by/"
-                            image={volmkImg}
-                            tags={["scss", "css", "js", "gulp", "bitrix"]}
-                            title="Volkovysk meat-processing plant"/>
-                    <PortfolioCard
-                            href="https://grodnomk.by"
-                            image={grodnomkImg}
-                            tags={["scss", "css", "js", "gulp", "bitrix"]}
-                            title="Grodnomk"/>
-                    <PortfolioCard
-                            href="https://mpp.by"
-                            image={mppImg}
-                            tags={["scss", "css", "js", "gulp", "wordpress"]}
-                            title="MASTERPRINT-PACK"/>
-                    <PortfolioCard
-                            href="https://shopneman.by/"
-                            image={shopnemanImg}
-                            tags={["scss", "css", "js", "gulp"]}
-                            title="Shop Neman"/>
-                </div>
-            </div>
-        </section>
+          </section>
+        </div>
+      </article>
     </main>
+    <aside class="page__article-sidebar article-sidebar">
+      <nav class="article-sidebar__nav">
+        <h3 class="list__title text-h4">In this article</h3>
+        <ul class="article-sidebar__list article-toc-list">
+          <li class="article-toc-list__item-wrapper">
+            <a href="#styles-articlest" class="article-toc-list__link">Styles</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
 </Layout>

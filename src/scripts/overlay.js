@@ -1,15 +1,18 @@
-function Overlay() {
-    this.overlay = document.querySelector(".page-overlay");
-}
+class Overlay {
 
-Overlay.prototype.open = function () {
-    document.body.style.overflow = "hidden";
-    this.overlay.setAttribute("aria-hidden", "false");
-}
+    constructor() {
+        this.overlay = document.querySelector(".page-overlay");
+    }
 
-Overlay.prototype.close = function () {
-    this.overlay.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = ""
+    open() {
+        document.body.style.overflow = "hidden";
+        this.overlay.setAttribute("aria-hidden", "false");
+    }
+
+    close() {
+        document.body.style.overflow = ""
+        this.overlay.setAttribute("aria-hidden", "true");
+    }
 }
 
 export const OVERLAY = new Overlay();

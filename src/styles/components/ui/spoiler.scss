@@ -1,0 +1,27 @@
+.spoiler {
+  &__header {
+    font-weight: 600;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    .icon {
+      transform: rotate(var(--icon-rotate, 0));
+      transition: transform 300ms ease;
+
+      width: var(--s-3);
+      height: var(--s-3);
+    }
+  }
+
+  &[open] {
+    --icon-rotate: 90deg;
+  }
+
+  &__content {
+    padding-left: var(--s-2);
+    border-left: var(--border-primary);
+  }
+}

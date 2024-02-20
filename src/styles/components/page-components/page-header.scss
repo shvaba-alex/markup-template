@@ -1,0 +1,21 @@
+.page-header {
+  padding-block: var(--s-2);
+  background-color: var(--clr-bg);
+  border-bottom: var(--border-primary);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+  }
+
+  &__socials {
+    display: flex;
+    gap: var(--s-2);
+    align-items: center;
+    color: var(--clr-text-accent);
+
+    .icon {
+      display: block;
+    }
+  }
+}

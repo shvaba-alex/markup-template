@@ -1,0 +1,11 @@
+.article-toc-list {
+  &__item-wrapper {
+  }
+
+  &__link {
+    @include small-text;
+    color: var(--clr-text-secondary);
+    border-left: var(--border-primary);
+    padding: var(--s-1) var(--s-2);
+  }
+}

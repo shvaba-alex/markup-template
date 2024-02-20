@@ -1,6 +1,4 @@
-@import "../components/portfolio-card";
-@import "../components/page-header";
-@import "../components/nav-list";
-@import "../components/section-header";
-@import "../components/skills-list";
-@import "../components/page-footer";
+@import '../components/ui/ui.scss';
+@import '../components/section-header.scss';
+@import '../components/article/article.scss';
+@import '../components/page-components/page-components.scss';

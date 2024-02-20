@@ -1,136 +1,132 @@
-import {debounce, unformatPhone} from "./utils.js";
+import { debounce, unformatPhone } from './utils.js'
 
-ymaps.ready(initShopMap);
-
+ymaps.ready(initShopMap)
 
 class ShopsMap {
-    defaultConfig = {
-        map: {
-            nodeId: 'shops-map',
-            center: [52.815725, 24.626304],
-            zoom: 7,
-        },
+  defaultConfig = {
+    map: {
+      nodeId: 'shops-map',
+      center: [52.815725, 24.626304],
+      zoom: 7
     }
+  }
 
-    constructor(shops) {
-        this.shops = shops;
+  constructor(shops) {
+    this.shops = shops
 
-        this._init();
-    }
+    this._init()
+  }
 
-    _init() {
-        this._initYandexMap();
-        this.createObjectManager();
-        this.addEvents();
-        this.map.geoObjects.add(this.objectManager);
-    }
+  _init() {
+    this._initYandexMap()
+    this.createObjectManager()
+    this.addEvents()
+    this.map.geoObjects.add(this.objectManager)
+  }
 
-    _initYandexMap() {
-        const mapConfig = this.defaultConfig.map;
-        this.map = new ymaps.Map(mapConfig.nodeId, mapConfig);
+  _initYandexMap() {
+    const mapConfig = this.defaultConfig.map
+    this.map = new ymaps.Map(mapConfig.nodeId, mapConfig)
 
-        this._paintCountryBorder();
-    }
+    this._paintCountryBorder()
+  }
 
-    _paintCountryBorder() {
-        // этот метод должен рисовать границы Беларуси,
-        // так как yandex отключил отображение границ
-
-        const belarus = ymaps.geoQuery(ymaps.regions.load("BY", {lang: "ru"}));
-        const regions = [
-            {
-                name: "Гродненская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                },
-            },
-            {
-                name: "Могилёвская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                }
-            },
-            {
-                name: "Гомельская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                }
-            },
-            {
-                name: "Витебская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                }
-            },
-            {
-                name: "Минская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                }
-            },
-            {
-                name: "Брестская область",
-                options: {
-                    fillOpacity: '0.1',
-                    fillColor: '#1ab7d8',
-                    strokeColor: '#fa4d09'
-                }
-            },
-        ];
-
-        // FIXME: это костыль! PS:  хз почему, но прошлый я написал, что нужно исправить
-        regions.forEach(region => {
-            belarus.search(`properties.hintContent = "${region.name}"`).setOptions(
-                region.options
-            ).addToMap(this.map);
-        });
-    }
-
-    createObjectManager() {
-        this.objectManager = new ymaps.ObjectManager({
-            clusterize: false,
-            gridSize: 64,
-            iconImageSize: [64, 64],
-        });
-
-        const objectManagerData = {
-            type: "FeatureCollection",
-            features: [],
+  _paintCountryBorder() {
+    const belarus = ymaps.geoQuery(ymaps.regions.load('BY', { lang: 'ru' }))
+    const regions = [
+      {
+        name: 'Гродненская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
         }
+      },
+      {
+        name: 'Могилёвская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
+        }
+      },
+      {
+        name: 'Гомельская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
+        }
+      },
+      {
+        name: 'Витебская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
+        }
+      },
+      {
+        name: 'Минская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
+        }
+      },
+      {
+        name: 'Брестская область',
+        options: {
+          fillOpacity: '0.1',
+          fillColor: '#1ab7d8',
+          strokeColor: '#fa4d09'
+        }
+      }
+    ]
+    
+    regions.forEach((region) => {
+      belarus
+        .search(`properties.hintContent = "${region.name}"`)
+        .setOptions(region.options)
+        .addToMap(this.map)
+    })
+  }
 
-        this.shops.forEach(shop => {
-            objectManagerData.features.push({
-                type: "Feature",
-                id: shop.id,
-                geometry: {type: "Point", coordinates: shop.coordinates},
-                properties: {
-                    shopId: shop.id,
-                    balloonContentBody: this.getStoreBalloonContentBody(shop),
-                },
-                options: {
-                    iconLayout: 'default#image',
-                    isActive: false,
-                    iconImageHref: "/img/marker.svg",
-                }
-            });
-        });
+  createObjectManager() {
+    this.objectManager = new ymaps.ObjectManager({
+      clusterize: false,
+      gridSize: 64,
+      iconImageSize: [64, 64]
+    })
 
-        this.objectManager.add(objectManagerData);
+    const objectManagerData = {
+      type: 'FeatureCollection',
+      features: []
     }
 
-    getStoreBalloonContentBody(store) {
-        console.log(store)
-        return `
+    this.shops.forEach((shop) => {
+      objectManagerData.features.push({
+        type: 'Feature',
+        id: shop.id,
+        geometry: { type: 'Point', coordinates: shop.coordinates },
+        properties: {
+          shopId: shop.id,
+          balloonContentBody: this.getStoreBalloonContentBody(shop)
+        },
+        options: {
+          iconLayout: 'default#image',
+          isActive: false,
+          iconImageHref: '/img/marker.svg'
+        }
+      })
+    })
+
+    this.objectManager.add(objectManagerData)
+  }
+
+  getStoreBalloonContentBody(store) {
+    console.log(store)
+    return `
             <div class="popover__inner store-popover">
                 <span>${store.address}</span>
                
@@ -141,41 +137,38 @@ class ShopsMap {
                 
                 <div>
                     <h4 class="store-popover__title">Телефон</h4>
-                     ${store.phones.map(phone => `<a href="tel:+${unformatPhone(phone)}">${phone}</a>`)} 
+                     ${store.phones.map(
+                       (phone) => `<a href="tel:+${unformatPhone(phone)}">${phone}</a>`
+                     )} 
                 </div>
                 
                 <div>
                     <h4 class="store-popover__title">эл. почта</h4>
-                    ${store.emails.map(email => `<a href="mailto:${email}">${email}</a>`)}
+                    ${store.emails.map((email) => `<a href="mailto:${email}">${email}</a>`)}
                 </div>
             </div>
         `
+  }
+
+  addEvents() {
+    window.addEventListener('hashchange', this.handleHashChange.bind(this))
+  }
+
+  handleHashChange(event) {}
+
+  goToShop(shopId) {
+    const shop = this.objectManager.objects.getById(shopId)
+
+    this.map.panTo(shop.geometry.coordinates).then(() => this.map.setZoom(10))
+  }
+
+  filterShops(shopIds) {
+    this.objectManager.setFilter(this.getFilterFunction(shopIds))
+  }
+
+  getFilterFunction(shopIds) {
+    return function (obj) {
+      return shopIds.includes(obj.properties.shopId)
     }
-
-    addEvents() {
-        window.addEventListener("hashchange", this.handleHashChange.bind(this));
-    }
-
-    handleHashChange(event) {
-
-    }
-
-    goToShop(shopId) {
-        const shop = this.objectManager.objects.getById(shopId);
-
-        this.map.panTo(shop.geometry.coordinates).then(() => this.map.setZoom(10));
-    }
-
-    filterShops(shopIds) {
-        this.objectManager.setFilter(this.getFilterFunction(shopIds));
-
-
-    }
-
-    getFilterFunction(shopIds) {
-        return function (obj) {
-            return shopIds.includes(obj.properties.shopId)
-        }
-    }
+  }
 }
-

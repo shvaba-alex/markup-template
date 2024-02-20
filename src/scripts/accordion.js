@@ -48,3 +48,32 @@ export class Accordion {
         this.toggle(false);
     }
 }
+
+export function initAccordions() {
+    const accordions = [];
+    document.querySelectorAll(".accordion")
+        .forEach((accordion) => {
+            accordions.push(new Accordion(accordion));
+        });
+
+    accordions.forEach(accordion => {
+        accordion.onOpen = (openedAccordion => {
+            accordions.filter(accordion => accordion !== openedAccordion).forEach(accordion => accordion.close())
+        });
+    });
+
+    accordions.forEach(accordion => {
+        if ('#' + accordion.id === location.hash) {
+            accordion.open();
+        }
+    });
+
+    window.addEventListener('hashchange', () => {
+        accordions.forEach(accordion => {
+            if ('#' + accordion.id === location.hash) {
+                accordion.open();
+            }
+        });
+    })
+
+}

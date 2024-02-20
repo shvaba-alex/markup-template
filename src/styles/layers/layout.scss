@@ -1,0 +1,228 @@
+.page {
+  @include text;
+
+  font-family: var(--font-family-main);
+  color: var(--clr-text);
+
+  min-width: var(--min-container-width);
+  min-height: 100svh;
+  overflow-x: hidden;
+
+  &__wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  &__header {
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: rem(300) 1fr auto;
+  }
+
+  &__sidebar {
+    position: sticky;
+    top: 0;
+  }
+
+  &__article-sidebar {
+    position: sticky;
+    top: 0;
+  }
+
+  &__main-content {
+    height: 100%;
+  }
+
+  &__footer {
+  }
+}
+
+.main-content {
+  --_inline-padding: var(--s-6);
+  height: 100%;
+
+  border-left: var(--border-primary);
+
+  &__title {
+    padding-inline: var(--_inline-padding);
+    padding-block: var(--s-2);
+  }
+
+  &__sections-wrapper {
+    padding-block: var(--s-5);
+    padding-inline: var(--_inline-padding);
+  }
+}
+
+.section {
+  &__content {
+    margin-top: var(--s-2);
+  }
+}
+
+[class*='__container'] {
+  box-sizing: content-box;
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container-query {
+  container: section-container / inline-size; // Safari 16+
+  box-sizing: content-box;
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(var(--container-padding), 1fr)
+    repeat(var(--columns), minmax(0, calc(var(--max-container-width) / var(--columns))))
+    minmax(var(--container-padding), 1fr);
+
+  & > * {
+    grid-column-start: 2;
+    grid-column-end: calc(var(--columns) + 2);
+  }
+}
+
+.content-grid {
+  --padding-inline: var(--container-padding);
+  --content-max-width: var(--max-container-width);
+  --breakout-max-width: 1200px;
+
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax(var(--padding-inline), 1fr)
+    [breakout-start]
+    minmax(0, var(--breakout-size))
+    [content-start]
+    min(100% - (var(--padding-inline) * 2), var(--content-max-width))
+    [content-end]
+    minmax(0, var(--breakout-size))
+    [breakout-end]
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
+
+  & > .full-width {
+    grid-column: full-width;
+
+    display: grid;
+    grid-template-columns: inherit;
+
+    & > :not(.breakout, .full-width) {
+      grid-column: content;
+    }
+  }
+
+  & > .breakout {
+    grid-column: breakout;
+  }
+
+  & > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+}
+
+.grid-auto-fit {
+  --min-column-width: 16rem;
+
+  display: grid;
+  gap: var(--grid-gap, var(--s-2));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-width), 100%), 1fr));
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  gap: var(--s-2);
+}
+
+.flow {
+  --flow-spacer: 1em;
+
+  & > *:where(:not(:first-child)) {
+    margin-top: var(--flow-spacer, 1em);
+  }
+}
+
+.content {
+  --accordion-margin: var(--s-5);
+  --block-margin: var(--s-10);
+
+  h2 {
+    @include text-h2;
+
+    @include md-tablet {
+      @include mobile-text-h2;
+    }
+  }
+
+  h3 {
+    @include text-h3;
+
+    @include md-tablet {
+      @include mobile-text-h3;
+    }
+  }
+
+  h4 {
+  }
+
+  h5 {
+  }
+
+  h6 {
+  }
+
+  a {
+    text-decoration: underline;
+    color: var(--clr-text-contrast);
+  }
+
+  p {
+    margin-top: var(--s-1);
+  }
+
+  *:is(h2, h3, h4, h5) + p {
+    margin-top: var(--s-1);
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: rem(700);
+    margin-top: var(--block-margin);
+    object-fit: cover;
+
+    & + * {
+      margin-top: var(--block-margin);
+    }
+
+    @media (max-width: $bp-tablet) {
+      height: rem(454);
+    }
+  }
+
+  .accordion:not(.accordion + .accordion) {
+    margin-top: var(--accordion-margin);
+  }
+
+  .accordion + :not(.accordion) {
+    margin-top: var(--accordion-margin);
+  }
+}

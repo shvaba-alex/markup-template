@@ -1,97 +1,144 @@
 @mixin defineVariable($name, $value) {
-	--#{$name}: #{$value}
+  --#{$name}: #{$value};
 }
 
 @mixin defineMarkupSpaces($margin) {
-	@for $i from 1 through 35 {
-		@include defineVariable("s-#{$i}", rem($margin * $i));
-	}
+  @for $i from 0 through 35 {
+    @include defineVariable('s-#{$i}', rem($margin * $i));
+    @include defineVariable('s-#{$i}_25', rem($margin * ($i + 0.25)));
+    @include defineVariable('s-#{$i}_5', rem($margin * ($i + 0.5)));
+    @include defineVariable('s-#{$i}_75', rem($margin * ($i + 0.75)));
+  }
 }
 
 @function percent($px, $from) {
-    $result: math.div($px, $from) * 100%;
+  $result: math.div($px, $from) * 100%;
 
-    @return $result;
+  @return $result;
 }
 
 @function rem($px) {
-    $result: math.div($px, 16)+rem;
+  $result: math.div($px, 16) + rem;
 
-    @return $result;
+  @return $result;
 }
 
 @function em($px, $current: 16) {
-    $result: math.div($px, $current)+em;
+  $result: math.div($px, $current) + em;
 
-    @return $result;
+  @return $result;
+}
+
+@mixin md-pc {
+  @media (max-width: $bp-pc) {
+    @content;
+  }
+}
+
+@mixin md-laptop {
+  @media (max-width: $bp-laptop) {
+    @content;
+  }
+}
+
+@mixin md-tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin md-mobile-large {
+  @media (max-width: $bp-mobile-large) {
+    @content;
+  }
+}
+
+@mixin md-mobile-medium {
+  @media (max-width: $bp-mobile-medium) {
+    @content;
+  }
+}
+
+@mixin md-mobile-small {
+  @media (max-width: $bp-mobile-medium) {
+    @content;
+  }
+}
+
+@mixin md-hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
 }
 
 @mixin text-h1() {
-	font-size: rem(76);
-	font-weight: 700;
-	line-height: math.div(104, 76);
+  font-size: rem(42);
+  font-weight: 600;
+  line-height: 120%;
 }
 
 @mixin mobile-text-h1() {
-	font-size: rem(40);
-	font-weight: 600;
-	line-height: math.div(55, 40);
+  font-size: rem(36);
 }
 
 @mixin text-h2() {
-	font-size: rem(40);
-	font-weight: 600;
-	line-height: math.div(55, 40);
+  font-size: rem(36);
+  font-weight: 600;
+  line-height: 120%;
 }
 
 @mixin mobile-text-h2() {
-	font-size: rem(32);
-	font-weight: 500;
-	line-height: math.div(44, 32);
+  font-size: rem(32);
 }
 
 @mixin text-h3() {
-	font-size: rem(32);
-	font-weight: 500;
-	line-height: math.div(44, 32);
+  font-size: rem(32);
+  font-weight: 500;
+  line-height: 120%;
 }
 
 @mixin mobile-text-h3() {
-	font-size: rem(20);
-	font-weight: 500;
-	line-height: math.div(27, 20);
+  font-size: rem(20);
+}
+
+@mixin text-h4() {
+  font-size: rem(20);
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@mixin mobile-text-h4() {
+  font-size: rem(16);
 }
 
 @mixin text() {
-	font-size: rem(18);
-	font-weight: 500;
-	line-height: math.div(25, 18);
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: 130%;
 }
 
 @mixin mobile-text() {
-	font-size: rem(16);
-	font-weight: 500;
-	line-height: math.div(22, 16);
+  font-size: rem(16);
 }
 
 @mixin small-text() {
-	font-size: rem(14);
-	line-height: math.div(19, 14);
+  font-size: rem(14);
+  line-height: math.div(19, 14);
 }
 
 @mixin mobile-small-text() {
-	font-size: rem(12);
-	line-height: math.div(16, 12);
+  font-size: rem(12);
+  line-height: math.div(16, 12);
 }
 
 @mixin small-text-2() {
-	font-size: rem(7);
-	line-height: math.div(10, 7);
+  font-size: rem(7);
+  line-height: math.div(10, 7);
 }
 
 @mixin text-button() {
-	font-size: rem(12);
-	font-weight: 700;
-	line-height: math.div(16, 12);
-	text-transform: uppercase;
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: math.div(16, 12);
+  text-transform: uppercase;
 }

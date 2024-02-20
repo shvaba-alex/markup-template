@@ -1,19 +1,23 @@
 .section-header {
-    padding-block-end: var(--s-2);
-    border-bottom: var(--border);
+  &__anchor-link {
+    &::before {
+      content: '#';
+      display: inline-block;
+      font-size: 0.7em;
+      line-height: 1;
+      margin-left: -0.8em;
+      width: 0.8em;
+      visibility: hidden;
+    }
+  }
 
-    &__title {
-        text-transform: uppercase;
+  @include md-hover {
+    &:hover &__anchor-link::before {
+      visibility: visible;
     }
 
-    &__description {
-        max-width: var(--col-w-6);
-        margin-top: var(--s-2);
+    &:hover &__anchor-link {
+      text-decoration: underline;
     }
-
-    @media (max-width: $bp-laptop) {
-        &__description {
-            max-width: 100%;
-        }
-    }
+  }
 }

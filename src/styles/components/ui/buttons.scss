@@ -1,0 +1,27 @@
+.button-primary {
+  @include text-button;
+
+  position: relative;
+
+  display: inline-flex;
+  gap: var(--s-1);
+  align-items: center;
+
+  width: fit-content;
+  padding-block: var(--s-2);
+  padding-inline: var(--s-4);
+
+  color: var(--clr-text-accent);
+
+  border: 1px solid var(--clr-text-accent);
+
+  .icon {
+    transition: transform 300ms ease;
+  }
+
+  @include md-hover {
+    &:hover .icon {
+      transform: translateX(25%);
+    }
+  }
+}

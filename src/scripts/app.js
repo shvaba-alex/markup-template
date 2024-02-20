@@ -1,9 +1,26 @@
-export const isMobile = {
-    Android: function () { return navigator.userAgent.match(/Android/i); },
-    BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
-    iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
-    Opera: function () { return navigator.userAgent.match(/Opera Mini/i); },
-    Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
-    any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); }
-};
+import LazyLoad from "vanilla-lazyload";
+import {isTouchDevice} from "./utilits.js";
 
+function initLazyLoad() {
+    new LazyLoad({
+        elements_selector: ['[data-lazy-load]'], class_loaded: 'lazy-loaded',
+    });
+}
+
+
+function setStyleClassesToHtml() {
+    if (isTouchDevice()) document.querySelector('html').classList.add('touch');
+
+    window.addEventListener('load', () => {
+        document.documentElement.classList.add('loaded');
+    });
+}
+
+export function initScripts() {
+    setStyleClassesToHtml();
+    initLazyLoad();
+
+    window.addEventListener('load', () => {
+        
+    });
+}

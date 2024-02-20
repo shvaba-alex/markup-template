@@ -1,0 +1,90 @@
+.text-h1 {
+  @include text-h1;
+
+  @include md-tablet {
+    @include mobile-text-h1;
+  }
+}
+
+.text-h2 {
+  @include text-h2;
+
+  @include md-tablet {
+    @include mobile-text-h2;
+  }
+}
+
+.text-h3 {
+  @include text-h3;
+
+  @include md-tablet {
+    @include mobile-text-h3;
+  }
+}
+
+.text-h4 {
+  @include text-h4;
+
+  @include md-tablet {
+    @include mobile-text-h4;
+  }
+}
+
+.text {
+  @include text;
+
+  @include md-tablet {
+    @include mobile-text;
+  }
+}
+
+.text-button {
+  @include text-button;
+}
+
+.small-text {
+  @include small-text;
+
+  @include md-tablet {
+    @include mobile-small-text;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.primary {
+  background: var(--clr-primary);
+}
+
+.text-overflow {
+  --line-clamp: 3;
+
+  overflow: hidden;
+  display: -webkit-box;
+  display: box;
+
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -ms-line-clamp: var(--line-clamp);
+  -webkit-line-clamp: var(--line-clamp);
+  line-clamp: var(--line-clamp);
+}
+
+.visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
