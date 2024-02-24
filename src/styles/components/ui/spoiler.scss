@@ -1,18 +1,19 @@
 .spoiler {
   &__header {
-    font-weight: 600;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
     cursor: pointer;
     user-select: none;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-weight: 600;
+
     .icon {
       transform: rotate(var(--icon-rotate, 0));
-      transition: transform 300ms ease;
-
       width: var(--s-3);
       height: var(--s-3);
+      transition: transform 300ms ease;
     }
   }
 

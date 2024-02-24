@@ -4,7 +4,7 @@
 
 | Chrome |  FF  | Safari | Chrome Android |
 | :----: | :--: |:------:| :------------: |
-|    ✓   |   ✓  |  14+   |       ✓        |
+|    ✓   |   ✓  |  15.4+   |       ✓        |
 
 ## 🚀 Project Structure
 

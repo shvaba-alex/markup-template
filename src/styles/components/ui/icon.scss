@@ -5,7 +5,10 @@
   //width: var(--icon-width);
   //height: var(--icon-height);
 
-  [stroke="none"] {
+                                       
+  display: inline-block;
+
+  [stroke='none'] {
     stroke: currentcolor;
   }
 }

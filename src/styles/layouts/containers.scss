@@ -1,0 +1,29 @@
+[class*='__container'] {
+  box-sizing: content-box;
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container-query {
+  container: section-container / inline-size; // Safari 16+
+
+  box-sizing: content-box;
+  max-width: var(--max-container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(var(--container-padding), 1fr)
+    repeat(var(--columns), minmax(0, calc(var(--max-container-width) / var(--columns))))
+    minmax(var(--container-padding), 1fr);
+
+  & > * {
+    grid-column: 2 / calc(var(--columns) + 2);
+  }
+}

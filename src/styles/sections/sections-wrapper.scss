@@ -1,0 +1,26 @@
+.sections-wrapper {
+  --default-margin: var(--s-14);
+  --default-margin-bottom: var(--s-14);
+
+  @include md-tablet {
+    --default-margin: var(--s-10);
+    --default-margin-bottom: var(--s-10);
+  }
+
+  @include md-mobile-medium {
+    --default-margin: var(--s-5);
+    --default-margin-bottom: var(--s-5);
+  }
+
+  > :is(.section) {
+    margin-top: var(--margin, var(--default-margin));
+
+    &:first-child {
+      --default-margin: var(--s-10);
+    }
+  }
+
+  > :is(.section):last-child {
+    margin-bottom: var(--margin-bottom, var(--default-margin-bottom));
+  }
+}

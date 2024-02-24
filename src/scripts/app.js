@@ -1,5 +1,8 @@
 import LazyLoad from "vanilla-lazyload";
 import {isTouchDevice} from "./utilits.js";
+import { initPopups } from "./popup.js";
+import { initAccordions } from "./accordion.js";
+import { initTabs } from "./tabs.js";
 
 function initLazyLoad() {
     new LazyLoad({
@@ -21,6 +24,8 @@ export function initScripts() {
     initLazyLoad();
 
     window.addEventListener('load', () => {
-        
+        initPopups();
+        initAccordions();
+        initTabs();
     });
 }

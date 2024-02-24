@@ -2,11 +2,11 @@
   --transitionLength: 500ms;
   --transitionTiming: ease;
 
-  padding-block: var(--s-5);
-  border-top: var(--border-primary);
+  padding-block: var(--s-2);
+  border-bottom: var(--border-primary);
 
-  &:last-child {
-    border-bottom: var(--border-primary);
+  * + & {
+    border-top: var(--border-primary);
   }
 
   &__header {

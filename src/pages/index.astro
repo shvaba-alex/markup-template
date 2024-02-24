@@ -1,62 +1,117 @@
 ---
 import Icon from '@/components/Icon.astro'
 import Layout from '@/layouts/Layout.astro'
+import Card from '@/components/Card.astro'
 ---
 
 <Layout title="Welcome to my Template.">
-  <div class="page__container">
-    <aside class="page__sidebar page-sidebar">
-      <nav class="page-sidebar__nav" aria-label="Primary navigation">
-        <details class="page-sidebar__list spoiler">
-          <summary class="spoiler__header">
-            Css
-            <Icon icon="arrow" />
-          </summary>
-          <div class="spoiler__content">
-            <ul class="sidebar-list">
-              <li class="sidebar-list__link-wrapper">
-                <a href="/styles-articlest" class="sidebar-list__link">Styles</a>
-              </li>
-            </ul>
+  <main class="page__main-content main-content">
+    <div class="main-content__sections-wrapper sections-wrapper">
+      <section id="popup-section" class="section">
+        <div class="section__container">
+          <div class="section__header section-header text-h2">
+            <h2 class="section-header__title">Popup</h2>
           </div>
-        </details>
-      </nav>
-    </aside>
-    <main class="page__main-content">
-      <article class="main-content__article main-content" id="styles-article">
-        <header class="main-content__header">
-          <h1 class="main-content__title text-h1">test</h1>
-        </header>
-        <div class="main-content__sections-wrapper">
-          <section class="main-content__section section">
-            <div class="section__header section-header text-h2">
-              <h2 class="section-header__title">
-                <a class="section-header__anchor-link" href="#">Layouts</a>
-              </h2>
-            </div>
-            <div class="section__content content">
-              <h3>some text</h3>
-              <p>
-                some Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis voluptates
-                tenetur explicabo ab dolores officiis sint facere? Doloremque quisquam illo dicta
-                perferendis voluptas, non molestias omnis optio ducimus suscipit corporis. Lorem
-                ipsum, dolor sit amet consectetur adipisicing elit. Ipsum nemo neque debitis
-                repudiandae animi non explicabo veniam voluptate sunt, optio numquam ipsa!
-              </p>
-            </div>
-          </section>
+          <div class="section__content content">
+            <button aria-haspopup="true" aria-controls="burger-popup" class="button">Open popup</button>
+          </div>
         </div>
-      </article>
-    </main>
-    <aside class="page__article-sidebar article-sidebar">
-      <nav class="article-sidebar__nav">
-        <h3 class="list__title text-h4">In this article</h3>
-        <ul class="article-sidebar__list article-toc-list">
-          <li class="article-toc-list__item-wrapper">
-            <a href="#styles-articlest" class="article-toc-list__link">Styles</a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
+      </section>
+
+      <section id="accordion-section" class="section">
+        <div class="section__container">
+          <div class="section__header section-header text-h2">
+            <h2 class="section-header__title">Accordion</h2>
+          </div>
+          <div class="section__content content">
+            <div class="accordion">
+              <div class="accordion__header">
+                <button id="accordion-0" type="button" aria-expanded="false" aria-controls="accordion-0__section" class="accordion__trigger">
+                  accordion
+                  <span class="accordion__icon icon"></span>
+                </button>
+              </div>
+
+              <div class="accordion__section" id="accordion-0__section" aria-hidden="true">
+                <div class="accordion__wrapper">
+                  <div class="accordion__wrapper-transform">
+                    <div class="accordion__content content">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero laborum nihil nisi, illo sapiente quod odit facilis
+                        repudiandae ratione quis et asperiores sit repellendus sunt soluta, dicta sint. Praesentium.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabs-section" class="section">
+        <div class="section__container">
+          <div class="section__header section-header text-h2">
+            <h2 class="section-header__title">Tabs</h2>
+          </div>
+          <div class="section__content content">
+            <div class="tabs">
+              <div role="tablist">
+                <button
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="tab-about-page-panel-0"
+                  id="about-page-tab-0"
+                  class="text-h2 uppercase swiper-slide swiper-slide-active"
+                  tabindex="0">
+                  Tab 1
+                </button>
+                <button
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-about-page-panel-1"
+                  id="about-page-tab-1"
+                  class="text-h2 uppercase swiper-slide swiper-slide-next"
+                  tabindex="0">
+                  Tab 2
+                </button>
+                <button
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-about-page-panel-2"
+                  id="about-page-tab-2"
+                  class="text-h2 uppercase swiper-slide"
+                  tabindex="0">
+                  Tab 3
+                </button>
+              </div>
+              <hr class="tabs__hr" />
+              <div id="tab-about-page-panel-0" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-0" aria-hidden="false">
+                <div class="tabs-section__tab-content content">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae illo provident cumque et minus facere odit sed! Enim dolores,
+                    soluta voluptatibus, iusto at non dicta neque vel, nihil sapiente necessitatibus.
+                  </p>
+                </div>
+              </div>
+              <div id="tab-about-page-panel-1" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-1" aria-hidden="true">
+                <div class="tabs-section__tab-content content">
+                  <p>
+                    2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe numquam ipsam praesentium laboriosam hic suscipit, impedit fugiat
+                    nulla quas molestiae officiis voluptatibus, sunt eum? Reprehenderit ut repudiandae harum ipsum cumque?
+                  </p>
+                </div>
+              </div>
+              <div id="tab-about-page-panel-2" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-2" aria-hidden="true">
+                <div class="tabs-section__tab-content content">
+                  3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, illo reiciendis! Sunt saepe molestias delectus consequuntur,
+                  deleniti amet ipsam aut dolores, quo repudiandae necessitatibus et quas omnis, cupiditate porro optio.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>

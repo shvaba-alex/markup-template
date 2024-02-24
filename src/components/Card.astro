@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title: string
+  href: string
+  image: string
+  tags: Array<string>
+}
+
+const { href, tags, title, image } = Astro.props
+---
+
+<div class="card">
+  <div class="card__media-wrapper">
+    <picture>
+      <source
+        data-lazy-load
+        media="(max-width: 90em) and (min-width: 62em)"
+        data-srcset="https://dummyimage.com/1441x1080/000/fff"
+      />
+      <source
+        data-lazy-load
+        media="(max-width: 62em) and (min-width: 40em)"
+        data-srcset="https://dummyimage.com/992x768/000/fff"
+      />
+      <source
+        data-lazy-load
+        media="(max-width: 40em)"
+        data-srcset="https://dummyimage.com/640x640/000/fff"
+      />
+      <img
+        class="card__media"
+        data-lazy-load
+        data-src="https://dummyimage.com/1440x1080/000/fff"
+        alt={title}
+      />
+    </picture>
+  </div>
+  <h3 class="card__title text-h3">
+    <a href={href} class="card__link" target="_blank">{title}</a>
+  </h3>
+</div>

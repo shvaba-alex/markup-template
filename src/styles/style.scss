@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 @import 'mixins/mixins';
 
 // SCSS variables
@@ -8,7 +9,7 @@ $bp-mobile-large: 48em; // 758px;
 $bp-tablet: 62em; // 992px;
 $bp-laptop: 64em; // 1024px;
 $bp-pc: 80em; // 1280px;
-$bp-container: 90rem; // 1440px;
+$bp-container: 90em; // 1440px;
 
 @import 'layers/normalize';
 @import 'layers/variables';

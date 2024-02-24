@@ -1,5 +1,11 @@
-.button-primary {
+.button {
   @include text-button;
+
+  @include md-hover {
+    &:hover .icon {
+      transform: translateX(25%);
+    }
+  }
 
   position: relative;
 
@@ -17,11 +23,5 @@
 
   .icon {
     transition: transform 300ms ease;
-  }
-
-  @include md-hover {
-    &:hover .icon {
-      transform: translateX(25%);
-    }
   }
 }

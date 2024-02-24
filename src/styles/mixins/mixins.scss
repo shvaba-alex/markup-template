@@ -8,6 +8,10 @@
     @include defineVariable('s-#{$i}_25', rem($margin * ($i + 0.25)));
     @include defineVariable('s-#{$i}_5', rem($margin * ($i + 0.5)));
     @include defineVariable('s-#{$i}_75', rem($margin * ($i + 0.75)));
+    @include defineVariable('s-#{$i}-negative', rem($margin * $i * -1));
+    @include defineVariable('s-#{$i}_25-negative', rem($margin * ($i + 0.25) * -1));
+    @include defineVariable('s-#{$i}_5-negative', rem($margin * ($i + 0.5) * -1));
+    @include defineVariable('s-#{$i}_75-negative', rem($margin * ($i + 0.75) * -1));
   }
 }
 

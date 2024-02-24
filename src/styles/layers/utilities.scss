@@ -75,7 +75,7 @@
   line-clamp: var(--line-clamp);
 }
 
-.visually-hidden {
+.visually-hidden, .sr-only {
   position: absolute;
 
   overflow: hidden;

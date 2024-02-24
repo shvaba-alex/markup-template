@@ -1,0 +1,28 @@
+.page {
+  @include text;
+
+  overflow-x: hidden;
+
+  min-width: var(--min-container-width);
+  min-height: 100svh;
+
+  font-family: var(--font-family-main);
+  color: var(--clr-text);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+  }
+
+  &__header {
+  }
+  
+  &__main-content {
+    height: 100%;
+  }
+
+  &__footer {
+  }
+}
