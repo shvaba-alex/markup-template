@@ -1,43 +1,60 @@
 .popup {
-  --transition-fn: ease;
-  --transition-duration: 200ms;
-  --clr-text-accent: var(--clr-white);
-  --max-width: 50rem;
-  --max-height: 50rem;
+  --_transition-fn: ease;
+  --_transition-duration: 200ms;
+  --_max-width: 50rem;
+  --_max-height: 50rem;
+  --_padding-top: var(--s-3);
+  --_padding-bottom: var(--s-6);
+  --_padding-left: var(--container-padding);
+  --_padding-right: var(--container-padding);
+
+  z-index: var(--zi-popup);
 
   position: fixed;
-  z-index: var(--zi-popup);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0%;
 
-  width: min(100%, var(--max-width));
-  height: min(100vh, var(--max-height));
-  height: min(100dvh, var(--max-height));
-  padding-block: var(--s-3) var(--s-6);
-  padding-inline: var(--container-padding);
-
-  color: var(--clr-white);
+  height: 100dvh;
+  width: 100%;
 
   visibility: hidden;
-  background-color: var(--clr-black);
+  opacity: 0;
 
-  transition: visibility var(--transition-duration) var(--transition-fn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    visibility var(--_transition-duration) var(--_transition-fn),
+    opacity var(--_transition-duration) var(--_transition-fn);
 
   &[aria-hidden='false'] {
     visibility: visible;
+    opacity: 1;
+  }
+
+  &__scroll-area {
+    width: calc(100% - 0px);
+    max-height: 100%;
+    overflow-y: auto;
   }
 
   &__inner {
-    overflow-y: auto;
-    height: 100%;
+    color: var(--clr-white);
+
+    margin-top: var(--_padding-top);
+    margin-bottom: var(--_padding-bottom);
+    margin-inline: auto;
+    width: min(100%, var(--_max-width));
+    padding-top: var(--_padding-top);
+    padding-inline: var(--_padding-left) var(--_padding-right);
+    background-color: var(--clr-black);
   }
 
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: max-content 1fr max-content;
-    height: 100%;
   }
 
   &__header {
@@ -64,5 +81,7 @@
     align-items: flex-end;
     justify-content: space-between;
     margin-top: var(--s-10);
+
+    padding-bottom: var(--_padding-bottom);
   }
 }

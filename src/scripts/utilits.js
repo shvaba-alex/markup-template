@@ -34,8 +34,11 @@ export const isMobile = {
     Windows: function () {
         return navigator.userAgent.match(/IEMobile/i);
     },
+    Yandex: function () {
+        return navigator.userAgent.match(/YaBrowser/);
+    },
     any: function () {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        return (isMobile.Android() || isMobile.Yandex() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
 

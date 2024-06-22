@@ -1,0 +1,13 @@
+.columns {
+  --column-min-size: ${rem(540)};
+  --column-count: 2;
+  --column-gap: var(--s-2);
+
+  --_breakpoint: calc(var(--column-min-size) * var(--column-count) + (var(--column-gap) * (var(--column-count) - 1)));
+  --_column-size: calc((100% / var(--column-count)) - var(--column-gap));
+
+  display: grid;
+  gap: var(--column-gap);
+
+  grid-template-columns: repeat(auto-fit, minmax(min(max(var(--_column-size), (100% - var(--_breakpoint)) * -999), 100%), 1fr));
+}

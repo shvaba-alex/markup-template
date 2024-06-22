@@ -1,0 +1,21 @@
+---
+import AccordionHeader from '@/components/ui/accordion/AccordionHeader.astro'
+import AccordionContent from '@/components/ui/accordion/AccordionContent.astro'
+
+export interface Props {
+  isOpen?: boolean
+}
+
+const { isOpen = false } = Astro.props
+
+const id = crypto.randomUUID()
+---
+
+<div class="accordion">
+  <AccordionHeader isOpen={isOpen} id={id}>
+    <slot name="header" />
+  </AccordionHeader>
+  <AccordionContent isOpen={isOpen} id={id}>
+    <slot />
+  </AccordionContent>
+</div>

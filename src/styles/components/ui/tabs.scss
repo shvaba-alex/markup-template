@@ -1,6 +1,7 @@
 .tabs {
   [role='tablist'] {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--s-2);
   }
 

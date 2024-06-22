@@ -1,165 +1,107 @@
-<!DOCTYPE html>
-<html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-		<meta name="generator" content="Astro v2.7.0">
-		<title>Welcome to my Template.</title>
-	<link rel="stylesheet" href="/assets/asset.3496cf1a.css" /></head>
-	<body>
-		<header class="page-header">
-    <div class="page-header__container">
-        <nav class="page-header__nav" aria-label="Main nav">
-            <ul class="page-header__nav-list nav-list">
-                <li class="nav-list__item">
-                    <a href="#intro-section" class="nav-list__link">Home</a>
-                </li>
-                <li>
-                    <a href="#about-section">About me</a>
-                </li>
-                <li class="nav-list__item">
-                    <a href="#portfolio-section" class="nav-list__link">Portfolio</a>
-                </li>
-            </ul>
-        </nav>
-        <ul class="page-header__socials">
-            <li>
-                <a href="https://www.linkedin.com/in/alex-shvaba/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
-                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
-                      </svg>
-                    <span class="visually-hidden">My page on Linkedin</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/shvaba-alex" target="_blank">
-                    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 0a12 12 0 0 0-3.8 23.39c.6.1.8-.26.8-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.09-.72.09-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.3.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.56 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17a4.63 4.63 0 0 1 1.24 3.22c0 4.61-2.81 5.63-5.48 5.92.43.38.82 1.1.82 2.23v3.29c0 .32.2.7.8.58A12 12 0 0 0 12 0z"></path></svg>
-                    <span class="visually-hidden">My page on GitHub</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</header>
-		
-    <main class="page">
-        <section id="intro-section" class="page__hero-section hero-section" aria-labelledby="hero-section-label">
-            <div class="hero-section__container">
-                <div class="hero-section__avatar">
-                    <img src="/assets/asset.8856bf58.jpg" alt="Shvaba Alexander">
-                </div>
-                <div class="hero-section__conten">
-                    <h1 class="hero-section__title text-h1" id="hero-section-label">
-                        Shvaba Alexander
-                    </h1>
-                    <p class="hero-section__description">
-                        I'm frontend developer
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section id="about-section" class="page__about-section about-section" aria-labelledby="about-section-title">
-            <div class="about-section__container">
-                <header class="about-section__header section-header">
-                    <h2 class="about-section__title section-header__title text-h2" id="about-section-title">
-                        About me
-                    </h2>
-                    <p class="about-section__description section-header__description">
-                        I’m Frontend Developer in "<a href="https://spektr.digital" target="_blank">spektr.digital</a>".
-                        I've been developing a CRM system for managing real
-                        estate documents using Vue,js, Laravel, WebSocket,
-                        Centrifugo and Docker, supporting WordPress projects and
-                        adding new functionality. I've experience about doing
-                        markup using Astro and Gulp.
-                    </p>
-                </header>
-                <div class="about-section__skills">
-                    <h3 class="text-h3">Skills:</h3>
-                    <ul class="about-section__skills-list skills-list">
-                        <li class="skills-list__skill">JS</li>
-                        <li class="skills-list__skill">Astro</li>
-                        <li class="skills-list__skill">Vue.js 3</li>
-                        <li class="skills-list__skill">SCSS</li>
-                        <li class="skills-list__skill">CSS</li>
-                        <li class="skills-list__skill">HTML</li>
-                        <li class="skills-list__skill">Git</li>
-                        <li class="skills-list__skill">Accessibility markup</li>
-                        <li class="skills-list__skill">Wordpress</li>
-                        <li class="skills-list__skill">Python</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio-section" class="page__portfolio-section portfolio-section" aria-labelledby="portfolio-section-title">
-            <div class="portfolio-section__container">
-                <header class="portfolio-section__header section-header">
-                    <h2 class="portfolio-section__title section-header__title text-h2" id="portfolio-section-title">
-                        Portfolio
-                    </h2>
-                </header>
-                <div class="portfolio-section__portfolios">
-                    <div class="portfolio-card">
-	<div class="portfolio-card__image-wrapper">
-		<img src="/assets/asset.53702bfe.webp" alt="CRM (NDA)">
-	</div>
-	<h3 class="portfolio-card__title text-h3">
-		<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&#38;ab_channel=RickAstley" class="portfolio-card__link" target="_blank">CRM (NDA)</a>
-	</h3>
-	<ul class="portfolio-card__tags">
-		<li class="portfolio-card__tag">js</li><li class="portfolio-card__tag">vue.js 3</li><li class="portfolio-card__tag">php</li><li class="portfolio-card__tag">laravel</li><li class="portfolio-card__tag">websocket</li><li class="portfolio-card__tag">centrifugo</li><li class="portfolio-card__tag">REST API</li>
-	</ul>
-</div>
-                    <div class="portfolio-card">
-	<div class="portfolio-card__image-wrapper">
-		<img src="/assets/asset.62ef882f.webp" alt="Volkovysk meat-processing plant">
-	</div>
-	<h3 class="portfolio-card__title text-h3">
-		<a href="https://volmk.by/" class="portfolio-card__link" target="_blank">Volkovysk meat-processing plant</a>
-	</h3>
-	<ul class="portfolio-card__tags">
-		<li class="portfolio-card__tag">scss</li><li class="portfolio-card__tag">css</li><li class="portfolio-card__tag">js</li><li class="portfolio-card__tag">gulp</li><li class="portfolio-card__tag">bitrix</li>
-	</ul>
-</div>
-                    <div class="portfolio-card">
-	<div class="portfolio-card__image-wrapper">
-		<img src="/assets/asset.fa855289.webp" alt="Grodnomk">
-	</div>
-	<h3 class="portfolio-card__title text-h3">
-		<a href="https://grodnomk.by" class="portfolio-card__link" target="_blank">Grodnomk</a>
-	</h3>
-	<ul class="portfolio-card__tags">
-		<li class="portfolio-card__tag">scss</li><li class="portfolio-card__tag">css</li><li class="portfolio-card__tag">js</li><li class="portfolio-card__tag">gulp</li><li class="portfolio-card__tag">bitrix</li>
-	</ul>
-</div>
-                    <div class="portfolio-card">
-	<div class="portfolio-card__image-wrapper">
-		<img src="/assets/asset.9dc95c09.webp" alt="MASTERPRINT-PACK">
-	</div>
-	<h3 class="portfolio-card__title text-h3">
-		<a href="https://mpp.by" class="portfolio-card__link" target="_blank">MASTERPRINT-PACK</a>
-	</h3>
-	<ul class="portfolio-card__tags">
-		<li class="portfolio-card__tag">scss</li><li class="portfolio-card__tag">css</li><li class="portfolio-card__tag">js</li><li class="portfolio-card__tag">gulp</li><li class="portfolio-card__tag">wordpress</li>
-	</ul>
-</div>
-                    <div class="portfolio-card">
-	<div class="portfolio-card__image-wrapper">
-		<img src="/assets/asset.2e7b0738.webp" alt="Shop Neman">
-	</div>
-	<h3 class="portfolio-card__title text-h3">
-		<a href="https://shopneman.by/" class="portfolio-card__link" target="_blank">Shop Neman</a>
-	</h3>
-	<ul class="portfolio-card__tags">
-		<li class="portfolio-card__tag">scss</li><li class="portfolio-card__tag">css</li><li class="portfolio-card__tag">js</li><li class="portfolio-card__tag">gulp</li>
-	</ul>
-</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-		<footer class="page-footer"></footer>
-		<div class="page-overlay"></div>
-		<div class="page-popups-area"></div>
-	</body></html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v4.1.1"><title>Welcome to my Template.</title><link rel="stylesheet" href="/assets/index.css" /><script type="module" src="/app.js"></script></head> <body class="page"> <svg class="visually-hidden" aria-hidden="true">
+      <symbol id="arrow" viewBox="0 0 16 16" fill="none">
+        <path fill="#000" d="M10 8 7 5.2a.7.7 0 0 0-1 1l2.5 2.3-2.4 2.4a.7.7 0 0 0 .2 1 .7.7 0 0 0 .5 0l.2-.1L10 9a.7.7 0 0 0 0-1Z"></path>  
+      </symbol>
+    
+      <symbol id="cart" viewBox="0 0 48 48" fill="none">
+        <g id="Stroke 2/shopping-bag">
+<g id="Group 9">
+<path id="Vector" d="M16 21.8327C16 20.9122 16.7462 20.166 17.6667 20.166H29.3333C30.2538 20.166 31 20.9122 31 21.8327V30.9993C31 31.9198 30.2538 32.666 29.3333 32.666H17.6667C16.7462 32.666 16 31.9198 16 30.9993V21.8327Z" stroke="#282827" stroke-linecap="round" stroke-linejoin="round"></path>
+<path id="Vector_2" d="M20.168 22.4073V19.3333C20.168 17.4924 21.6604 16 23.5013 16C25.3422 16 26.8346 17.4924 26.8346 19.3333V22.4073" stroke="#282827" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+</g>  
+      </symbol>
+    
+      <symbol id="clip" viewBox="0 0 24 24" fill="currentcolor">
+        <path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path>  
+      </symbol>
+    
+      <symbol id="github" viewBox="0 0 24 24" fill="currentColor">
+        <path 
+                            fill="currentColor"
+                            d="M12 0a12 12 0 0 0-3.8 23.39c.6.1.8-.26.8-.58v-2.23c-3.34.72-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.09-.72.09-.72 1.2.08 1.84 1.23 1.84 1.23 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.3.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.56 3.3-1.23 3.3-1.23.66 1.65.25 2.87.12 3.17a4.63 4.63 0 0 1 1.24 3.22c0 4.61-2.81 5.63-5.48 5.92.43.38.82 1.1.82 2.23v3.29c0 .32.2.7.8.58A12 12 0 0 0 12 0z"></path>  
+      </symbol>
+    
+      <symbol id="linkedin" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>  
+      </symbol>
+    </svg> <div class="page__wrapper"> <header class="page__header page-header"> <div class="page-header__container container"> <ul class="page-header__socials"> <li> <a href="https://www.linkedin.com/in/alex-shvaba/" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match icon" width="24" height="24" focusable="false"><use href="#linkedin"></use></svg> <span class="visually-hidden">My page on Linkedin</span> </a> </li> <li> <a href="https://github.com/shvaba-alex" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon"><use href="#github"></use></svg> <span class="visually-hidden">My page on GitHub</span> </a> </li> </ul> </div> </header>  <main class="page__main-content main-content"> <h1 class="sr-only">Markup template</h1> <div class="main-content__sections-wrapper sections-wrapper"> <section id="popup-section" class="section"> <div class="section__container container"> <header class="section__header section-header text-h2"> <h2 class="section-header__title">Popup</h2> </header> <div class="section__content content"> <button class="button" aria-haspopup="true" aria-controls="burger-popup"> Open popup </button> </div> </div> </section> <section id="accordion-section" class="section"> <div class="section__container container"> <header class="section__header section-header text-h2"> <h2 class="section-header__title">Accordion</h2> </header> <div class="section__content content"> <div class="accordion"> <div class="accordion__header"> <button id="accordion-be66235e-9bfb-4e00-9efe-aff26fde7a83" type="button" aria-expanded="true" aria-controls="accordion-be66235e-9bfb-4e00-9efe-aff26fde7a83__section" class="accordion__trigger"> <span class="accordion__header-title">  accordion 1  </span> <span class="accordion__icon icon"></span> </button> </div> <div class="accordion__section" id="accordion-be66235e-9bfb-4e00-9efe-aff26fde7a83__section" aria-hidden="false"> <div class="accordion__wrapper"> <div class="accordion__wrapper-transform"> <div class="accordion__content content">    <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero laborum nihil nisi, illo sapiente quod odit facilis
+                repudiandae ratione quis et asperiores sit repellendus sunt soluta, dicta sint. Praesentium.
+</p>   </div> </div> </div> </div> </div> <div class="accordion"> <div class="accordion__header"> <button id="accordion-f1d15fe6-bd49-4ec3-9e48-45723de6d9b0" type="button" aria-expanded="false" aria-controls="accordion-f1d15fe6-bd49-4ec3-9e48-45723de6d9b0__section" class="accordion__trigger"> <span class="accordion__header-title">  accordion 2  </span> <span class="accordion__icon icon"></span> </button> </div> <div class="accordion__section" id="accordion-f1d15fe6-bd49-4ec3-9e48-45723de6d9b0__section" aria-hidden="true"> <div class="accordion__wrapper"> <div class="accordion__wrapper-transform"> <div class="accordion__content content">    <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero laborum nihil nisi, illo sapiente quod odit facilis
+                repudiandae ratione quis et asperiores sit repellendus sunt soluta, dicta sint. Praesentium.
+</p>   </div> </div> </div> </div> </div> </div> </div> </section> <section id="tabs-section" class="section"> <div class="section__container container"> <div class="section__header section-header text-h2"> <h2 class="section-header__title">Tabs</h2> </div> <div class="section__content content"> <div class="tabs"> <div role="tablist"> <div role="tab" aria-selected="true" aria-controls="tab-about-page-panel-0" id="about-page-tab-0" class="text-h2 uppercase swiper-slide swiper-slide-active" tabindex="0">
+Tab 1
+</div> <div role="tab" aria-selected="false" aria-controls="tab-about-page-panel-1" id="about-page-tab-1" class="text-h2 uppercase swiper-slide swiper-slide-next" tabindex="0">
+Tab 2
+</div> <div role="tab" aria-selected="false" aria-controls="tab-about-page-panel-2" id="about-page-tab-2" class="text-h2 uppercase swiper-slide" tabindex="0">
+Tab 3
+</div> </div> <hr class="tabs__hr"> <div id="tab-about-page-panel-0" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-0" aria-hidden="false"> <div class="tabs-section__tab-content content"> <p>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae illo provident cumque et minus facere odit sed! Enim dolores,
+                    soluta voluptatibus, iusto at non dicta neque vel, nihil sapiente necessitatibus.
+</p> </div> </div> <div id="tab-about-page-panel-1" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-1" aria-hidden="true"> <div class="tabs-section__tab-content content"> <p>
+2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe numquam ipsam praesentium laboriosam hic suscipit, impedit fugiat
+                    nulla quas molestiae officiis voluptatibus, sunt eum? Reprehenderit ut repudiandae harum ipsum cumque?
+</p> </div> </div> <div id="tab-about-page-panel-2" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-2" aria-hidden="true"> <div class="tabs-section__tab-content content">
+3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, illo reiciendis! Sunt saepe molestias delectus consequuntur,
+                  deleniti amet ipsam aut dolores, quo repudiandae necessitatibus et quas omnis, cupiditate porro optio.
+</div> </div> </div> </div> </div> </section> <section class="section"> <div class="section__container container-grid"> <div class="container-grid__bg-block" style="background-color: red;"></div> <div class="container-grid__content">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quas tempore commodi, accusamus quo quis quod beatae quos quibusdam aut, ab
+            maxime atque sunt maiores facere ipsam amet, a doloremque.
+</div> </div> </section> </div> </main>  <footer class="page__footer page-footer"></footer> <div class="page__overlay page-overlay"></div> </div> <div class="page__popups-area"> <div role="dialog" aria-modal="true" id="burger-popup" aria-hidden="true" class="popup" aria-labelledby="popup-title"> <div class="popup__scroll-area"> <div class="popup__inner"> <h2 id="popup-title" class="popup__title visually-hidden">Основное меню</h2> <div class="popup__wrapper"> <div class="popup__header"> <button data-popup-close type="button" class="popup__close"> <span>Close</span> </button> </div> <div class="popup__content">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, dolorum fugiat sed quasi placeat eligendi. Accusantium amet obcaecati vel
+          quam quisquam. Officia expedita libero aliquid doloribus, voluptatem, vitae deserunt nam amet sit aut, fugit officiis in atque maiores cumque
+          exercitationem vel magnam inventore dolorum ea. Minima laudantium iste facere inventore aliquam at tenetur cupiditate ullam eos esse a, odit
+          iusto eveniet maiores explicabo culpa, saepe ex dolores earum mollitia necessitatibus et! Sit sint deleniti quasi cumque aliquid, amet a
+          quaerat corporis commodi. Labore aperiam iste atque dolorum! Ratione vero sapiente voluptatum temporibus eveniet nam adipisci, laborum illo
+          saepe quod enim esse, et asperiores nesciunt illum, quis in recusandae dignissimos porro fugit molestiae ipsa! Ad ipsa quaerat ratione alias
+          veritatis dolores facilis, aspernatur provident blanditiis similique sequi dignissimos neque vel corporis tempore, consequuntur earum suscipit
+          molestias in nulla velit magnam quisquam saepe. Corporis voluptatibus sunt voluptate inventore ab quisquam ad molestiae obcaecati quia natus
+          explicabo praesentium mollitia iste harum alias deserunt, nostrum veniam. Ad qui sint maiores ipsam dolorum distinctio quam debitis nulla.
+          Obcaecati cumque laboriosam iure natus veritatis deserunt, id ipsa atque voluptas nihil neque consequatur quibusdam sed quae quasi voluptates!
+          Vel labore natus dolorum dolor esse in ratione repellat vero obcaecati quos, similique inventore, voluptatem quisquam fugiat ab ipsam
+          cupiditate harum ad, explicabo laudantium quaerat veritatis minus. Eaque expedita a illo, molestiae temporibus vitae dignissimos rem unde hic
+          dolore. Qui hic error ut? Voluptate dignissimos reprehenderit corporis. Ullam velit nulla tempore expedita deserunt repellat aliquid, corporis
+          magnam quaerat voluptatum maxime eaque quas rerum quos earum, odit illo perspiciatis? Illo et maxime, dignissimos explicabo, soluta cum
+          accusamus facere officia vel nam atque incidunt labore dolore illum, aliquid similique quibusdam voluptatibus tempora non consequatur! Quo
+          possimus rerum harum reprehenderit, aspernatur, consectetur obcaecati quos et quod blanditiis tempore nam deserunt ducimus nemo sapiente
+          corrupti. Distinctio quas similique officia non explicabo nisi, sit consectetur eos voluptatibus itaque velit veniam nemo earum, cupiditate
+          voluptates adipisci numquam unde ullam minus assumenda. Sint, porro quibusdam aliquid, asperiores voluptatibus officiis est voluptate nemo
+          minima corporis libero. Hic optio eaque minima voluptate molestias facere ut illum quos fugiat animi. Doloribus cumque voluptate incidunt ab
+          dolorum eius nam magnam accusantium quam sapiente pariatur quis blanditiis dolore aut odit cum nostrum reiciendis ducimus, harum praesentium?
+          Vero earum quidem eum in sed unde id, eius reprehenderit atque aspernatur facere, deserunt deleniti excepturi pariatur iure fugit tempora esse
+          perspiciatis eligendi illo ducimus magnam. Voluptas non commodi quam inventore ab dolore unde quis. Provident, quae est dignissimos quod quis
+          quas cum explicabo? Asperiores sunt, tenetur deleniti voluptatibus accusantium illo odit corporis a tempora suscipit neque voluptate!
+          Quibusdam architecto animi aspernatur. Aut iste quod explicabo quam quidem! Molestias placeat distinctio aliquam ratione. Vel culpa
+          praesentium distinctio a accusamus sint expedita eius, ipsa ducimus, labore recusandae ipsam asperiores nisi nemo. Possimus doloremque
+          blanditiis numquam aut labore fuga tenetur molestias. Itaque praesentium tenetur doloremque officia quibusdam? Laudantium culpa minus ducimus,
+          quia dignissimos officia cupiditate consectetur nemo omnis libero natus eligendi voluptatum maiores ea. Suscipit ipsa necessitatibus
+          voluptatum iusto enim aperiam nobis nostrum inventore, alias minus cupiditate excepturi reiciendis quis, magni assumenda voluptatibus commodi
+          deleniti reprehenderit minima corporis? Reiciendis corporis ipsum eligendi sunt officiis tenetur provident aut facilis dolorum esse iure, quae
+          quasi incidunt voluptatem laboriosam minus commodi, cupiditate deleniti nisi earum in, nam quidem. Dolorem maxime corrupti repellendus fuga
+          nobis ullam unde! Atque deserunt modi cupiditate quo, voluptate quam minus ad voluptatem deleniti temporibus iste explicabo aliquam sunt neque
+          eligendi, doloribus sit consequuntur! Et maiores illo rerum voluptatibus necessitatibus iure corrupti minus fugit. Commodi neque eius animi
+          fuga, alias mollitia ipsam similique culpa, cupiditate est dolore, illum repellendus explicabo atque. Animi debitis illo voluptates ipsa
+          consectetur, eveniet sunt et pariatur aperiam reiciendis aliquid, dolore dolor maxime dolorem officiis! Doloremque optio illo adipisci esse
+          dolorem, odit iste facilis, nisi possimus error quo hic consequatur quisquam tenetur velit quis dolores voluptas libero animi quidem
+          excepturi? Quae qui eveniet maiores nesciunt sapiente vel at, amet non? Odio suscipit mollitia magnam vel, quidem, consectetur at consequuntur
+          accusamus ab aspernatur ullam distinctio saepe facilis fuga ipsa minus praesentium incidunt. Itaque hic tempora possimus dolores tenetur
+          quisquam, magni labore nesciunt beatae accusamus voluptate. Molestiae eveniet vitae sed quam? Veritatis, a soluta autem numquam officia
+          consectetur repudiandae provident totam, ut maiores, error quae doloribus exercitationem? Similique, amet iste? Esse libero accusamus, neque
+          explicabo ab est distinctio quae quisquam architecto provident minus debitis repellendus accusantium culpa dolores dicta deserunt assumenda
+          rem quos possimus fuga id dignissimos dolore. Cum nihil consequuntur repellat porro! Quidem earum tempore magni, corrupti, natus magnam
+          voluptatem illo dignissimos odio doloribus dolor quasi! Quo ut repellat, harum quam cupiditate minima consectetur illum neque unde sunt? Neque
+          fugiat quasi ut veritatis, adipisci nulla mollitia maxime perferendis distinctio molestias quos et earum ducimus dignissimos fuga non minima
+          culpa labore iure dicta. Fugit vel eos beatae praesentium animi alias rem voluptate culpa laborum asperiores, maiores ea eaque natus quod sint
+          aspernatur ratione nihil voluptatum quasi. Temporibus veritatis aliquid voluptates nisi tempora ex, inventore quam assumenda enim! Laborum
+          doloremque officia placeat tenetur, natus aliquid ut sed aperiam maiores incidunt illum magnam rerum, explicabo eligendi saepe minus veritatis
+          illo. Facilis odit nostrum deleniti repellendus! Aperiam pariatur quaerat ex sit adipisci eum eaque est sunt neque blanditiis fugiat ut, natus
+          minus reprehenderit facere dolorum alias perferendis excepturi et provident? Ab, a repudiandae molestiae sapiente alias quidem harum minus,
+          dolore, voluptas porro eligendi sit explicabo impedit corporis recusandae saepe officiis quis nostrum facilis illo totam eos quaerat omnis.
+          Fugit facilis distinctio, tempora unde est rem fuga. Tempore suscipit, nemo voluptatem quae nam nihil consequatur officia asperiores sint
+          recusandae incidunt doloribus quisquam delectus veniam beatae possimus optio illo at quam amet fuga magnam tenetur nobis sunt. Eveniet quasi
+          odit deserunt voluptate neque? Repellendus beatae voluptas quis dolores asperiores! Animi, quis quia nostrum sint ad neque aliquid assumenda
+          laudantium adipisci nisi nam vero tenetur esse, magnam unde voluptates exercitationem modi illo officia veniam voluptas nemo deleniti!
+          Repellat dolores aperiam voluptatibus, quo repudiandae eos pariatur, maiores maxime corrupti reprehenderit quis! Inventore!
+</div> <div class="popup__footer"></div> </div> </div> </div> </div> </div>  </body> </html>

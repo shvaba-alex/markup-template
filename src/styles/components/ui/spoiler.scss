@@ -7,10 +7,8 @@
     align-items: center;
     justify-content: space-between;
 
-    font-weight: 600;
-
     .icon {
-      transform: rotate(var(--icon-rotate, 0));
+      transform: rotate(var(--_icon-rotate, 0));
       width: var(--s-3);
       height: var(--s-3);
       transition: transform 300ms ease;
@@ -18,7 +16,7 @@
   }
 
   &[open] {
-    --icon-rotate: 90deg;
+    --_icon-rotate: 90deg;
   }
 
   &__content {

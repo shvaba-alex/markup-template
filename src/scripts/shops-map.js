@@ -20,7 +20,7 @@ class ShopsMap {
   _init() {
     this._initYandexMap()
     this.createObjectManager()
-    this.addEvents()
+    this._addEvents()
     this.map.geoObjects.add(this.objectManager)
   }
 
@@ -150,7 +150,7 @@ class ShopsMap {
         `
   }
 
-  addEvents() {
+  _addEvents() {
     window.addEventListener('hashchange', this.handleHashChange.bind(this))
   }
 

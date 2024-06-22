@@ -1,1 +1,43 @@
-@import 'portfolio-card';
+.card {
+  position: relative;
+
+  &__media-wrapper {
+    display: block;
+    contain: paint;
+    aspect-ratio: 1;
+    border-radius: var(--s-1);
+
+    &__image-media {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: scale 300ms ease-in-out;
+    }
+  }
+
+  @include md-hover {
+    &:hover &__media-wrapper &__image-media {
+      scale: 1.1;
+    }
+  }
+
+  &__title {
+    margin-top: var(--s-2);
+  }
+
+  &__link {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+  }
+
+  &__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-1);
+    margin-top: var(--s-2);
+  }
+}

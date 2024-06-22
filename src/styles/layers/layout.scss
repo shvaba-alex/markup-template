@@ -2,26 +2,6 @@
 @import '../layouts/main-content';
 @import '../layouts/containers';
 @import '../layouts/content-layouts';
+@import '../layouts/grids/grids';
+@import '../layouts/content-blocks';
 
-.grid-auto-fit {
-  --min-column-width: 16rem;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-width), 100%), 1fr));
-  gap: var(--grid-gap, var(--s-2));
-}
-
-.even-columns {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
-  gap: var(--s-2);
-}
-
-.flow {
-  --flow-spacer: 1em;
-
-  & > *:where(:not(:first-child)) {
-    margin-top: var(--flow-spacer, 1em);
-  }
-}

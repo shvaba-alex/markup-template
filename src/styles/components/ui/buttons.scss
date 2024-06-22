@@ -1,12 +1,6 @@
 .button {
   @include text-button;
 
-  @include md-hover {
-    &:hover .icon {
-      transform: translateX(25%);
-    }
-  }
-
   position: relative;
 
   display: inline-flex;
@@ -19,9 +13,5 @@
 
   color: var(--clr-text-accent);
 
-  border: 1px solid var(--clr-text-accent);
-
-  .icon {
-    transition: transform 300ms ease;
-  }
+  border: var(--s-0_25) solid var(--clr-text-accent);
 }

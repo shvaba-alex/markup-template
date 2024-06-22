@@ -20,7 +20,6 @@ export class Accordion {
     }
 
     toggle(open) {
-        // don't do anything if the open state doesn't change
         if (open === this.isOpen) {
             return;
         }
@@ -39,7 +38,6 @@ export class Accordion {
         }
     }
 
-    // Add public open and close methods for convenience
     open() {
         this.toggle(true);
     }
@@ -51,6 +49,7 @@ export class Accordion {
 
 export function initAccordions() {
     const accordions = [];
+    
     document.querySelectorAll(".accordion")
         .forEach((accordion) => {
             accordions.push(new Accordion(accordion));

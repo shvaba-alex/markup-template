@@ -1,0 +1,85 @@
+---
+import { parse } from 'node-html-parser'
+
+function getSVG(name: string) {
+  const filepath = `/src/icons/${name}.svg`
+
+  if (!(filepath in files)) {
+    throw new Error(`${filepath} not found`)
+  }
+
+  const root = parse(files[filepath])
+
+  const svg = root.querySelector('svg')
+  const { attributes, innerHTML } = svg
+
+  return {
+    attributes,
+    innerHTML
+  }
+}
+
+const files = import.meta.glob<string>('/src/icons/**/*.svg', {
+  as: 'raw',
+  eager: true
+})
+
+const filename = (fullPath) => fullPath.replace(/^.*[\\/]/, '').split('.')[0];
+
+
+const icons = []
+for (const [path, svg] of Object.entries(files)) {
+  const svgHTMLElement = parse(svg)
+  svgHTMLElement.name = filename(path)
+  icons.push(svgHTMLElement);
+}
+
+function generateSprite(icons) {
+  let sprite = ''
+
+  icons.forEach((icon) => {
+    sprite += `
+      <symbol id="${icon.name}" ${extractAttributes(icon.innerHTML)}>
+        ${extractSvgContent(icon.innerHTML)}  
+      </symbol>
+    `
+  })
+
+  sprite += ''
+
+  return sprite
+}
+
+function extractAttributes(content: string): string {
+  const viewBoxPattern = /viewBox="([^"]*)"/
+  const fillPattern = /fill="([^"]*)"/
+
+  const viewBoxMatch = content.match(viewBoxPattern)
+  const fillMatch = content.match(fillPattern)
+
+  const viewBoxAttr = viewBoxMatch && viewBoxMatch[0] ? viewBoxMatch[0] : ''
+  const fillAttr = fillMatch && fillMatch[0] ? fillMatch[0] : ''
+
+  return `${viewBoxAttr} ${fillAttr}`
+}
+
+function extractSvgContent(svgContent: string): string {
+  const startTag = '<svg'
+  const endTag = '</svg>'
+
+  const startIndex = svgContent.indexOf(startTag)
+  const endIndex = svgContent.indexOf(endTag)
+
+  if (startIndex !== -1 && endIndex !== -1) {
+    const startTagEndIndex = svgContent.indexOf('>', startIndex)
+    const content = svgContent.slice(startTagEndIndex + 1, endIndex).trim()
+    return content
+  }
+
+  return ''
+}
+
+const innerHTML = generateSprite(icons)
+---
+
+<svg class="visually-hidden" aria-hidden="true" set:html={innerHTML} />

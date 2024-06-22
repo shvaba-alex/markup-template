@@ -13,9 +13,12 @@ $bp-container: 90em; // 1440px;
 
 @import 'layers/normalize';
 @import 'layers/variables';
+
+@include defineSpaceTokensClasses(8);
+@include defineGapClasses(8);
+
 @import 'layers/defaults';
 @import 'layers/libraries';
+@import 'layers/utilities';
 @import 'layers/components';
 @import 'layers/layout';
-@import 'layers/content-blocks';
-@import 'layers/utilities';

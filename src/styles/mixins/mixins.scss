@@ -2,8 +2,8 @@
   --#{$name}: #{$value};
 }
 
-@mixin defineMarkupSpaces($margin) {
-  @for $i from 0 through 35 {
+@mixin defineSpaceTokens($margin, $maxIterations: 35) {
+  @for $i from 0 through $maxIterations {
     @include defineVariable('s-#{$i}', rem($margin * $i));
     @include defineVariable('s-#{$i}_25', rem($margin * ($i + 0.25)));
     @include defineVariable('s-#{$i}_5', rem($margin * ($i + 0.5)));
@@ -12,6 +12,64 @@
     @include defineVariable('s-#{$i}_25-negative', rem($margin * ($i + 0.25) * -1));
     @include defineVariable('s-#{$i}_5-negative', rem($margin * ($i + 0.5) * -1));
     @include defineVariable('s-#{$i}_75-negative', rem($margin * ($i + 0.75) * -1));
+  }
+}
+
+@mixin defineSpaceTokensClasses($margin, $maxIterations: 35) {
+  @for $i from 0 through $maxIterations {
+    .mt-#{$i} {
+      margin-top: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .mb-#{$i} {
+      margin-bottom: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .ml-#{$i} {
+      margin-left: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .mr-#{$i} {
+      margin-right: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .mx-#{$i} {
+      margin-inline: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .my-#{$i} {
+      margin-block: #{rem($margin * $i)};
+    }
+  }
+}
+
+@mixin defineGapClasses($margin, $maxIterations: 35) {
+  @for $i from 0 through $maxIterations {
+    .gap-#{$i} {
+      gap: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .column-gap-#{$i} {
+      column-gap: #{rem($margin * $i)};
+    }
+  }
+
+  @for $i from 0 through $maxIterations {
+    .row-gap-#{$i} {
+      row-gap: #{rem($margin * $i)};
+    }
   }
 }
 
