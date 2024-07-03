@@ -85,7 +85,7 @@
 .content-grid {
   --padding-inline: var(--container-padding);
   --content-max-width: var(--max-container-width);
-  --breakout-max-width: 1200px;
+  --breakout-max-width: 77rem;
   --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 
   display: grid;

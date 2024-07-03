@@ -1,9 +1,16 @@
 .card {
+
+  @include md-hover {
+    &:hover &__media-wrapper &__image-media {
+      scale: 1.1;
+    }
+  }
+
   position: relative;
 
   &__media-wrapper {
-    display: block;
     contain: paint;
+    display: block;
     aspect-ratio: 1;
     border-radius: var(--s-1);
 
@@ -12,12 +19,6 @@
       height: 100%;
       object-fit: cover;
       transition: scale 300ms ease-in-out;
-    }
-  }
-
-  @include md-hover {
-    &:hover &__media-wrapper &__image-media {
-      scale: 1.1;
     }
   }
 

@@ -4,7 +4,7 @@
 
   border: 0;
 
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgb(255 255 255 / 0%);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -145,7 +145,7 @@ address {
 }
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 ::-webkit-color-swatch-wrapper {
@@ -154,10 +154,10 @@ address {
 
 ::-webkit-file-upload-button {
   font: inherit;
-  -webkit-appearance: button;
+  appearance: button;
 }
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  appearance: button;
 }

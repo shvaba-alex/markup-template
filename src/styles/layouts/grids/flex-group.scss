@@ -2,14 +2,14 @@
   --row-gap: var(--s-2);
 
   display: flex;
-  gap: var(--row-gap);
   flex-wrap: wrap;
+  gap: var(--row-gap);
   align-items: center;
 
   max-width: fit-content;
 
   & > * {
-    min-width: fit-content;
     flex: 1;
+    min-width: fit-content;
   }
 }

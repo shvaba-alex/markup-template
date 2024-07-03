@@ -97,8 +97,20 @@
   }
 }
 
+@mixin md-pc-min {
+  @media (min-width: $bp-pc) {
+    @content;
+  }
+}
+
 @mixin md-laptop {
   @media (max-width: $bp-laptop) {
+    @content;
+  }
+}
+
+@mixin md-laptop-min {
+  @media (min-width: $bp-laptop) {
     @content;
   }
 }
@@ -109,8 +121,20 @@
   }
 }
 
+@mixin md-tablet-min {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
 @mixin md-mobile-large {
   @media (max-width: $bp-mobile-large) {
+    @content;
+  }
+}
+
+@mixin md-mobile-large-min {
+  @media (min-width: $bp-mobile-large) {
     @content;
   }
 }
@@ -121,8 +145,20 @@
   }
 }
 
+@mixin md-mobile-medium-min {
+  @media (min-width: $bp-mobile-medium) {
+    @content;
+  }
+}
+
 @mixin md-mobile-small {
   @media (max-width: $bp-mobile-medium) {
+    @content;
+  }
+}
+
+@mixin md-mobile-small-min {
+  @media (min-width: $bp-mobile-medium) {
     @content;
   }
 }

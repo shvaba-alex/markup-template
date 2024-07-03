@@ -1,20 +1,21 @@
 .page {
   @include text;
 
+  scrollbar-gutter: stable;
+
+  overflow-y: auto;
+
   min-width: var(--container-min-width);
   height: 100%;
 
   font-family: var(--ff-text);
   color: var(--clr-text);
 
-  overflow-y: auto;
-  scrollbar-gutter: stable;
-
   &__wrapper {
-    height: 100%;
     display: grid;
-    align-items: flex-start;
     grid-template-rows: auto 1fr auto;
+    align-items: flex-start;
+    height: 100%;
   }
 
   &__header {

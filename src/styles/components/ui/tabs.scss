@@ -13,8 +13,8 @@
   }
 
   [role='tab'] {
-    width: fit-content;
     cursor: pointer;
+    width: fit-content;
   }
 
   [role='tab'][aria-selected='false'] {
