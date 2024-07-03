@@ -1,118 +1,113 @@
 ---
-import "../styles/style.scss";
-import Layout from "../layouts/Layout.astro";
-import PortfolioCard from "../components/PortfolioCard.astro";
-
-import volmkImg from "../images/volmk.webp";
-import grodnomkImg from "../images/grodnomk.webp";
-import mppImg from "../images/mpp.webp";
-import crmImg from "../images/crm.webp";
-import meImg from "../images/me.jpg";
-import shopnemanImg from "../images/shopneman.webp";
+import Icon from '@/components/Icon.astro'
+import Layout from '@/layouts/Layout.astro'
+import Card from '@/components/Card.astro'
+import Accordion from '@/components/ui/accordion/Accordion.astro'
+import Button from '@/components/ui/Buttons/Button.astro'
 ---
 
 <Layout title="Welcome to my Template.">
-    <main class="page">
-        <section
-                id="intro-section"
-                class="page__hero-section hero-section"
-                aria-labelledby="hero-section-label">
-            <div class="hero-section__container">
-                <div class="hero-section__avatar">
-                    <img src={meImg} alt="Shvaba Alexander"/>
+  <main class="page__main-content main-content">
+    <h1 class="sr-only">Markup template</h1>
+    <div class="main-content__sections-wrapper sections-wrapper">
+      <section id="popup-section" class="section">
+        <div class="section__container container">
+          <header class="section__header section-header text-h2">
+            <h2 class="section-header__title">Popup</h2>
+          </header>
+          <div class="section__content content">
+            <Button aria-haspopup="true" aria-controls="burger-popup">Open popup</Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="accordion-section" class="section">
+        <div class="section__container container">
+          <header class="section__header section-header text-h2">
+            <h2 class="section-header__title">Accordion</h2>
+          </header>
+          <div class="section__content content">
+            <Accordion isOpen={true}>
+              <Fragment slot="header">accordion 1</Fragment>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero laborum nihil nisi, illo sapiente quod odit facilis
+                repudiandae ratione quis et asperiores sit repellendus sunt soluta, dicta sint. Praesentium.
+              </p>
+            </Accordion>
+            <Accordion>
+              <Fragment slot="header">accordion 2</Fragment>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vero laborum nihil nisi, illo sapiente quod odit facilis
+                repudiandae ratione quis et asperiores sit repellendus sunt soluta, dicta sint. Praesentium.
+              </p>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabs-section" class="section">
+        <div class="section__container container">
+          <div class="section__header section-header text-h2">
+            <h2 class="section-header__title">Tabs</h2>
+          </div>
+          <div class="section__content content">
+            <div class="tabs">
+              <div role="tablist">
+                <div
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="tab-about-page-panel-0"
+                  id="about-page-tab-0"
+                  class="text-h2 uppercase swiper-slide swiper-slide-active"
+                  tabindex="0">
+                  Tab 1
                 </div>
-                <div class="hero-section__conten">
-                    <h1
-                            class="hero-section__title text-h1"
-                            id="hero-section-label">
-                        Shvaba Alexander
-                    </h1>
-                    <p class="hero-section__description">
-                        I'm frontend developer
-                    </p>
+                <div
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-about-page-panel-1"
+                  id="about-page-tab-1"
+                  class="text-h2 uppercase swiper-slide swiper-slide-next"
+                  tabindex="0">
+                  Tab 2
                 </div>
+                <div
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-about-page-panel-2"
+                  id="about-page-tab-2"
+                  class="text-h2 uppercase swiper-slide"
+                  tabindex="0">
+                  Tab 3
+                </div>
+              </div>
+              <hr class="tabs__hr" />
+              <div id="tab-about-page-panel-0" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-0" aria-hidden="false">
+                <div class="tabs-section__tab-content content">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae illo provident cumque et minus facere odit sed! Enim dolores,
+                    soluta voluptatibus, iusto at non dicta neque vel, nihil sapiente necessitatibus.
+                  </p>
+                </div>
+              </div>
+              <div id="tab-about-page-panel-1" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-1" aria-hidden="true">
+                <div class="tabs-section__tab-content content">
+                  <p>
+                    2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe numquam ipsam praesentium laboriosam hic suscipit, impedit fugiat
+                    nulla quas molestiae officiis voluptatibus, sunt eum? Reprehenderit ut repudiandae harum ipsum cumque?
+                  </p>
+                </div>
+              </div>
+              <div id="tab-about-page-panel-2" role="tabpanel" tabindex="0" aria-labelledby="about-page-tab-2" aria-hidden="true">
+                <div class="tabs-section__tab-content content">
+                  3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, illo reiciendis! Sunt saepe molestias delectus consequuntur,
+                  deleniti amet ipsam aut dolores, quo repudiandae necessitatibus et quas omnis, cupiditate porro optio.
+                </div>
+              </div>
             </div>
-        </section>
-        <section
-                id="about-section"
-                class="page__about-section about-section"
-                aria-labelledby="about-section-title">
-            <div class="about-section__container">
-                <header class="about-section__header section-header">
-                    <h2 class="about-section__title section-header__title text-h2" id="about-section-title">
-                        About me
-                    </h2>
-                    <p class="about-section__description section-header__description">
-                        I’m Frontend Developer in "<a href="https://spektr.digital" target="_blank">spektr.digital</a>".
-                        I've been developing a CRM system for managing real
-                        estate documents using Vue,js, Laravel, WebSocket,
-                        Centrifugo and Docker, supporting WordPress projects and
-                        adding new functionality. I've experience about doing
-                        markup using Astro and Gulp.
-                    </p>
-                </header>
-                <div class="about-section__skills">
-                    <h3 class="text-h3">Skills:</h3>
-                    <ul class="about-section__skills-list skills-list">
-                        <li class="skills-list__skill">JS</li>
-                        <li class="skills-list__skill">Astro</li>
-                        <li class="skills-list__skill">Vue.js 3</li>
-                        <li class="skills-list__skill">SCSS</li>
-                        <li class="skills-list__skill">CSS</li>
-                        <li class="skills-list__skill">HTML</li>
-                        <li class="skills-list__skill">Git</li>
-                        <li class="skills-list__skill">Accessibility markup</li>
-                        <li class="skills-list__skill">Wordpress</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section
-                id="portfolio-section"
-                class="page__portfolio-section portfolio-section"
-                aria-labelledby="portfolio-section-title">
-            <div class="portfolio-section__container">
-                <header class="portfolio-section__header section-header">
-                    <h2 class="portfolio-section__title section-header__title text-h2" id="portfolio-section-title">
-                        Portfolio
-                    </h2>
-                </header>
-                <div class="portfolio-section__portfolios">
-                    <PortfolioCard
-                            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-                            image={crmImg}
-                            tags={[
-                                "js",
-                                "vue.js 3",
-                                "php",
-                                "laravel",
-                                "websocket",
-                                "centrifugo",
-                                "REST API",
-                            ]}
-                            title="CRM (NDA)"/>
-                    <PortfolioCard
-                            href="https://volmk.by/"
-                            image={volmkImg}
-                            tags={["scss", "css", "js", "gulp", "bitrix"]}
-                            title="Volkovysk meat-processing plant"/>
-                    <PortfolioCard
-                            href="https://grodnomk.by"
-                            image={grodnomkImg}
-                            tags={["scss", "css", "js", "gulp", "bitrix"]}
-                            title="Grodnomk"/>
-                    <PortfolioCard
-                            href="https://mpp.by"
-                            image={mppImg}
-                            tags={["scss", "css", "js", "gulp", "wordpress"]}
-                            title="MASTERPRINT-PACK"/>
-                    <PortfolioCard
-                            href="https://shopneman.by/"
-                            image={shopnemanImg}
-                            tags={["scss", "css", "js", "gulp"]}
-                            title="Shop Neman"/>
-                </div>
-            </div>
-        </section>
-    </main>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 </Layout>

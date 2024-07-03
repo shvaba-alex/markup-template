@@ -12,13 +12,13 @@ export class Tabs {
 
     addEvents() {
         // Add a click event handler to each tab
-        this.tabs.forEach((tab) => {
+        this.tabs?.forEach((tab) => {
             tab.addEventListener("click", this.changeTabs.bind(this));
         });
 
         // Enable arrow navigation between tabs in the tab list
         let tabFocus = 0;
-        this.tabList.addEventListener("keydown", (e) => {
+        this.tabList?.addEventListener("keydown", (e) => {
             // Move right
             if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
                 this.tabs[tabFocus].setAttribute("tabindex", -1);
@@ -45,7 +45,7 @@ export class Tabs {
 
     changeTabs(e) {
         const target = e.target.closest("[aria-controls]");
-        const parent = target.parentNode;
+        const parent = target.parentNode.parentNode;
         const grandparent = parent.parentNode;
 
         // Remove all current selected tabs

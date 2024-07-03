@@ -1,37 +1,24 @@
-@use "sass:math";
+@use 'sass:math';
 
-@import "mixins/mixins";
+@import 'mixins/mixins';
 
-@layer normolize,
-variables,
-defaults,
-framework,
-components,
-utilities,
-overrides;
-
-// SCSS varibles
+// SCSS variables
 $bp-mobile-small: 30em; // 480px;
 $bp-mobile-medium: 40em; // 640px;
 $bp-mobile-large: 48em; // 758px;
 $bp-tablet: 62em; // 992px;
 $bp-laptop: 64em; // 1024px;
 $bp-pc: 80em; // 1280px;
+$bp-container: 90em; // 1440px;
 
-@import 'https://fonts.googleapis.com/css2?family=Inter&display=swap';
+@import 'layers/normalize';
+@import 'layers/variables';
 
-@layer normolize {
-    @import "layers/normolize";
-}
+@include defineSpaceTokensClasses(8);
+@include defineGapClasses(8);
 
-@layer variables {
-    @import "layers/variables";
-}
-
-@layer defaults {
-    @import "layers/defaults";
-}
-
-@layer components {
-    @import "layers/components";
-}
+@import 'layers/defaults';
+@import 'layers/libraries';
+@import 'layers/utilities';
+@import 'layers/components';
+@import 'layers/layout';

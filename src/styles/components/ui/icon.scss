@@ -1,0 +1,9 @@
+.icon {
+  display: inline-block;
+  width: var(--icon-width);
+  height: var(--icon-height);
+
+  [stroke='none'] {
+    stroke: currentcolor;
+  }
+}

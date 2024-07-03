@@ -1,0 +1,33 @@
+.page {
+  @include text;
+
+  scrollbar-gutter: stable;
+
+  overflow-y: auto;
+
+  min-width: var(--container-min-width);
+  height: 100%;
+
+  font-family: var(--ff-text);
+  color: var(--clr-text);
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  &__header {
+  }
+
+  &__main-content {
+  }
+
+  &__footer {
+    align-self: flex-end;
+  }
+
+  &__popups-area {
+  }
+}

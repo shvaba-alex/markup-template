@@ -1,0 +1,17 @@
+.button {
+  @include text-button;
+
+  position: relative;
+
+  display: inline-flex;
+  gap: var(--s-1);
+  align-items: center;
+
+  width: fit-content;
+  padding-block: var(--s-2);
+  padding-inline: var(--s-4);
+
+  color: var(--clr-text-accent);
+
+  border: var(--s-0_25) solid var(--clr-text-accent);
+}

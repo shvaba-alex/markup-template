@@ -20,7 +20,6 @@ export class Accordion {
     }
 
     toggle(open) {
-        // don't do anything if the open state doesn't change
         if (open === this.isOpen) {
             return;
         }
@@ -39,7 +38,6 @@ export class Accordion {
         }
     }
 
-    // Add public open and close methods for convenience
     open() {
         this.toggle(true);
     }
@@ -47,4 +45,34 @@ export class Accordion {
     close() {
         this.toggle(false);
     }
+}
+
+export function initAccordions() {
+    const accordions = [];
+    
+    document.querySelectorAll(".accordion")
+        .forEach((accordion) => {
+            accordions.push(new Accordion(accordion));
+        });
+
+    accordions.forEach(accordion => {
+        accordion.onOpen = (openedAccordion => {
+            accordions.filter(accordion => accordion !== openedAccordion).forEach(accordion => accordion.close())
+        });
+    });
+
+    accordions.forEach(accordion => {
+        if ('#' + accordion.id === location.hash) {
+            accordion.open();
+        }
+    });
+
+    window.addEventListener('hashchange', () => {
+        accordions.forEach(accordion => {
+            if ('#' + accordion.id === location.hash) {
+                accordion.open();
+            }
+        });
+    })
+
 }

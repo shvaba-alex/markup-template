@@ -1,0 +1,17 @@
+---
+export interface Props {
+  id: string
+  isOpen?: boolean
+}
+
+const { id, isOpen = false } = Astro.props
+---
+
+<div class="accordion__header">
+  <button id={`accordion-${id}`} type="button" aria-expanded={`${isOpen}`} aria-controls={`accordion-${id}__section`} class="accordion__trigger">
+    <span class="accordion__header-title">
+      <slot />
+    </span>
+    <span class="accordion__icon icon"></span>
+  </button>
+</div>

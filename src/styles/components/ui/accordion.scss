@@ -1,0 +1,110 @@
+.accordion {
+  --transitionLength: 500ms;
+  --transitionTiming: ease;
+
+  padding-block: var(--s-2);
+  border-bottom: var(--border-primary);
+
+  * + & {
+    border-top: var(--border-primary);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__trigger {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    text-align: left;
+  }
+
+  &__icon {
+    --after-rotate: 90deg;
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: block;
+
+    min-width: var(--s-6);
+    min-height: var(--s-6);
+
+    border: var(--border-primary);
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: var(--s-2);
+      height: 1px;
+
+      background-color: currentcolor;
+
+      transition: transform 300ms ease-in-out;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(var(--after-rotate));
+
+      rotation-point: center;
+    }
+  }
+
+  &__trigger[aria-expanded='true'] &__icon {
+    --after-rotate: 0deg;
+  }
+
+  &__section {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--transitionLength) var(--transitionTiming);
+
+    &[aria-hidden='false'] {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__wrapper {
+    min-height: 0;
+  }
+
+  &__wrapper-transform {
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition:
+      transform var(--transitionLength) var(--transitionTiming),
+      visibility 0s var(--transitionLength) var(--transitionTiming);
+  }
+
+  &__section[aria-hidden='false'] &__wrapper-transform {
+    transform: translateY(0);
+    visibility: visible;
+    transition:
+      transform var(--transitionLength) var(--transitionTiming),
+      visibility 0s linear;
+  }
+
+  &__content {
+    margin-top: var(--s-2);
+  }
+}
