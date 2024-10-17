@@ -1,5 +1,4 @@
 :root {
-
   // Theme colors
   --clr-black: hsl(228deg 10% 10%);
   --clr-gray-100: hsl(224deg 20% 94%);
@@ -36,7 +35,6 @@
   --zi-all-cover: 8;
 
   // container
-
   --max-content-width: 112rem; // max content width for ultra wide monitors
   --container-max-width: 90rem; // 1440px;
   --container-min-width: 22.5rem; // 360px;
@@ -75,10 +73,14 @@
   --col-w-9-g: calc(var(--col-w-1) * 9 + var(--grid-gutter) * 9);
   --col-w-10-g: calc(var(--col-w-1) * 10 + var(--grid-gutter) * 10);
   --col-w-11-g: calc(var(--col-w-1) * 11 + var(--grid-gutter) * 11);
+
+  // Fonts
   --ff-fallback: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, 'Helvetica Neue', arial, 'Noto Sans', sans-serif;
-  --ff-text: inter, var(--ff-fallback);
+  --ff-text: Inter, var(--ff-fallback);
   --ff-heading: inter, var(--ff-fallback);
   --ff-subheading: inter, var(--ff-fallback);
+
+  // Border
   --br-sm: var(--s-0_5);
   --br: var(--s-1);
   --br-lg: var(--s-2);
@@ -87,8 +89,11 @@
   --border-color: var(--clr-gray-100);
   --border-style: solid;
   --border-primary: var(--border-width) var(--border-style) var(--border-color);
+
+  // Icon
   --icon-width: var(--s-3);
   --icon-height: var(--s-3);
+
   // UI spaces
   @include defineSpaceTokens(8);
 
